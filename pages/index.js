@@ -16,9 +16,8 @@ export default function Home() {
       })
     }
     getProjects().then(projects => setProjects(projects))
-  })
+  }, [])
 
-  console.log(projects)
   return (
     <div className={styles.root}>
       <Head>
@@ -26,32 +25,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <h1 className={styles.mainTitle}>Benjamin Scott</h1>
-      <p className={styles.subHeader}>Professional Web Developer</p>
-      <div className={styles.iconsContainer}>
-        <i className={"fab fa-react " + styles.iconReact}></i>
-        <i className={"fab fa-js-square " + styles.iconJS}></i>
-        <i className={"fas fa-code " + styles.iconCode}></i>
-        <i className={"fab fa-python " + styles.iconPy}></i>
-      </div>
-      <section>
-        <div className={styles.projectsSectionContainer}>
-          <h2 className={styles.projectsTitle}>Projects</h2>
-            {projects ? (
-              <div className={styles.projectsContainer}>
-                {projects.map(p => {
-                  return (<ProjectCard 
-                    projectTitle={p.projectName}
-                    projectDesc={p.projectDesc}
-                    githubLink={p.githubUrl}
-                    liveLink={p.liveUrl}
-                    img={p.img}
-                  />)
-                })}
-              </div>
-            ): <p>Loading...</p>}
-        </div>
-      </section>
+      <main>
+        <section className={styles.heroSection}>
+          <h1 className={styles.mainTitle}>Benjamin Scott</h1>
+          <p className={styles.subHeader}>Web Developer</p>
+          <div className={styles.iconsContainer}>
+            <i className={"fab fa-react " + styles.iconReact}></i>
+            <i className={"fab fa-js-square " + styles.iconJS}></i>
+            <i className={"fas fa-code " + styles.iconCode}></i>
+            <i className={"fab fa-python " + styles.iconPy}></i>
+          </div>
+        </section>
+        <section>
+          <div className={styles.projectsSectionContainer}>
+            <h2 className={styles.projectsTitle}>Projects</h2>
+              {projects ? (
+                <div className={styles.projectsContainer}>
+                  {projects.map(p => {
+                    return (<ProjectCard 
+                      projectTitle={p.projectName}
+                      projectDesc={p.projectDesc}
+                      githubLink={p.githubUrl}
+                      liveLink={p.liveUrl}
+                      img={p.img}
+                    />)
+                  })}
+                </div>
+              ): <p>Loading...</p>}
+          </div>
+        </section>
+      </main>
     </div>
   )
 }

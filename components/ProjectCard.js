@@ -13,11 +13,11 @@ export const ProjectCard = ({
         <div className={styles.root}>
             {/** Upper half  */}
             <div className={styles.imgContainer}>
-                <Image layout='fill' src={img} />
+                <Image layout='fill' objectFit={true} src={img} />
             </div>
 
             {/** Lower half */}
-            <div className={styles.cardLowerHalf}>
+            {/* <div className={styles.cardLowerHalf}>
                 <div>
                     <h4 className={styles.projectTitle}>{projectTitle}</h4>
                     <p className={styles.projectDesc}>{projectDesc}</p>
@@ -31,7 +31,7 @@ export const ProjectCard = ({
                         <Link href={liveLink}><i className={"fas fa-link " + styles.liveIcon}></i></Link>
                     ): null}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

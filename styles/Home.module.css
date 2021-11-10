@@ -2,6 +2,10 @@
   background-color: var(--background);
 }
 
+.heroSection {
+  position: relative;
+}
+
 .mainTitle {
   font-size: 5rem;
   text-transform: uppercase;
@@ -23,7 +27,7 @@
   justify-content: space-between;
   font-size: 2rem;
   width: 200px;
-  margin: 0 auto 20vh auto;
+  margin: 0 auto 50vh auto;
 }
 
 
@@ -51,6 +55,7 @@
   padding: 1rem;
   min-height: 100vh;
   box-shadow: 10px 10px 25px 10px #0004;
+  text-align: center;
 }
 
 .projectsTitle {
@@ -65,5 +70,5 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
   justify-items: center; 
-  row-gap: 20px;
+  row-gap: 3rem;
 }

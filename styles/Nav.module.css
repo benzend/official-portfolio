@@ -17,3 +17,8 @@
     text-transform: uppercase;
     cursor: pointer;
 }
+
+.logoWrapper {
+    margin-right: 2.5rem;
+    margin-left: 2rem;
+}
