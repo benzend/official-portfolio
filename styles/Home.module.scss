@@ -4,6 +4,20 @@
 
 .heroSection {
   position: relative;
+  padding-top: 25vh;
+  padding-bottom: 45vh;
+}
+
+.heroLogo {
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
 }
 
 .mainTitle {
@@ -11,7 +25,6 @@
   text-transform: uppercase;
   text-align: center;
   color: var(--white);
-  margin-top: 25vh;
   margin-bottom: 10vh;
 }
 
@@ -27,7 +40,7 @@
   justify-content: space-between;
   font-size: 2rem;
   width: 200px;
-  margin: 0 auto 50vh auto;
+  margin: auto;
 }
 
 
@@ -71,4 +84,38 @@
   grid-template-columns: 1fr 1fr 1fr; 
   justify-items: center; 
   row-gap: 3rem;
+}
+
+/* Animation */
+
+.expandingSquareContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.expandingSquareContainer {
+}
+
+.expandingSquare {
+  width: 3%;
+  height: 3%;
+}
+
+
+@keyframes expand-square {
+  0% {
+    background-color: var(--background);
+    transform: scale(1);
+  } 50% {
+    background-color: #80c0d3;
+    transform: scale(1);
+  } 100% {
+    background-color: var(--background);
+    transform: scale(1);
+  }
 }

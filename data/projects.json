@@ -1,82 +1,26 @@
 [
     {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
+        "id": "ifjoiwejflksjdflk",
+        "projectName": "Vue Tracker",
         "projectDesc": "This is solely a test project for testing this card",
         "githubUrl": "https://github.com",
         "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        "img": "/project-headers/tracker.png"
     },
     {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
+        "id": "oawiefiowjfkdljksfd",
+        "projectName": "React Language App",
         "projectDesc": "This is solely a test project for testing this card",
         "githubUrl": "https://github.com",
         "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        "img": "/project-headers/language-app.png"
     },
     {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
+        "id": "aowiejfiojaflkdd",
+        "projectName": "React Calculator",
         "projectDesc": "This is solely a test project for testing this card",
         "githubUrl": "https://github.com",
         "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-        "id": "iwejfoijqowjfjaosidfj",
-        "projectName": "Test Project",
-        "projectDesc": "This is solely a test project for testing this card",
-        "githubUrl": "https://github.com",
-        "liveUrl": "https://google.com",
-        "img": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        "img": "/project-headers/calculator.png"
     }
 ]
