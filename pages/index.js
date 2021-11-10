@@ -33,7 +33,7 @@ export default function Home() {
           </div>
           <div className={styles.heroContent}>
             <h1 className={styles.mainTitle}>Benjamin Scott</h1>
-            <p className={styles.subHeader}>Web Developer</p>
+            <p className={styles.subHeader}>Sofware Engineer</p>
             <div className={styles.iconsContainer}>
               <i className={"fab fa-react " + styles.iconReact}></i>
               <i className={"fab fa-js-square " + styles.iconJS}></i>
@@ -45,23 +45,8 @@ export default function Home() {
             <BLogo fill='#383838' height="500px" width="500px" />
           </div>
         </section>
-        <section>
-          <div className={styles.projectsSectionContainer}>
-            <h2 className={styles.projectsTitle}>Projects</h2>
-              {projects ? (
-                <div className={styles.projectsContainer}>
-                  {projects.map(p => {
-                    return (<ProjectCard 
-                      projectTitle={p.projectName}
-                      projectDesc={p.projectDesc}
-                      githubLink={p.githubUrl}
-                      liveLink={p.liveUrl}
-                      img={p.img}
-                    />)
-                  })}
-                </div>
-              ): <p>Loading...</p>}
-          </div>
+        <section className={styles.aboutSection}>
+          
         </section>
       </main>
     </div>

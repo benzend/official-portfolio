@@ -13,7 +13,7 @@ export const ProjectCard = ({
         <div className={styles.root}>
             {/** Upper half  */}
             <div className={styles.imgContainer}>
-                <Image layout='fill' objectFit={true} src={img} />
+                <Image layout='fill' objectFit="cover" src={img} />
             </div>
 
             {/** Lower half */}
