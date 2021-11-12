@@ -1,11 +1,13 @@
 .root {
   background-color: var(--background);
+  height: 100vh;
+  overflow: hidden;
 }
 
 .heroSection {
   position: relative;
-  padding-top: 25vh;
-  padding-bottom: 45vh;
+  padding-top: 40vh;
+  padding-bottom: 40vh;
 }
 
 .heroLogo {
@@ -67,22 +69,39 @@
   animation: explode-py-icon 2s .3s ease-out forwards, dance-py-icon 4s 2.3s ease infinite;
 }
 
-.aboutSection {
-  max-width: var(--screen-lg);
-  margin: auto;
-  background-color: var(--white);
-  border-radius: 2rem;
-  padding: 1rem;
-  min-height: 100vh;
-  box-shadow: 10px 10px 25px 10px #0004;
+.getInTouch {
   text-align: center;
+  margin-top: 10rem;
+  color: white;
+  opacity: 0;
+  animation: get-in-touch .4s 3s ease forwards;
+}
+
+@media screen and (max-width: 500px) {
+  .heroLogo {
+    animation: insert-hero-logo-mobile .3s linear forwards;
+  }
+  .heroSection {
+    padding-top: 20vh;
+  }
+  .mainTitle {
+    font-size: 3rem;
+  }
+}
+
+@keyframes get-in-touch {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
 }
 
 @keyframes insert-hero-logo {
   0% {
     top: -100vh;
   } 100% {
-    top: 20vh;
+    top: 30vh;
   }
 }
 

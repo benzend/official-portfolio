@@ -1,10 +1,8 @@
 import Head from 'next/head'
-import { Nav } from '../components/nav'
 import {useEffect, useState} from 'react';
 import { BLogo } from '../components/svg/BLogo'
 import _projects from '../data/projects.json'
 import styles from '../styles/Home.module.scss'
-import { ProjectCard } from '../components/ProjectCard'
 
 export default function Home() {
   const [projects, setProjects] = useState(null)
@@ -25,7 +23,6 @@ export default function Home() {
         <title>Benjamin Scott</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
       <main>
         <section className={styles.heroSection}>
           <div className={styles.expandingSquareContainer}>
@@ -41,12 +38,12 @@ export default function Home() {
               <i className={"fab fa-python " + styles.iconPy}></i>
             </div>
           </div>
+          <div className={styles.getInTouch}>
+            <a href="mailto: benjamin.scottt.dev@gmail.com">Get In Touch</a>
+          </div>
           <div className={styles.heroLogo}>
             <BLogo fill='#383838' height="500px" width="500px" />
           </div>
-        </section>
-        <section className={styles.aboutSection}>
-          
         </section>
       </main>
     </div>
