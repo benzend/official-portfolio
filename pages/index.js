@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { BLogo } from '../components/svg/BLogo'
-import _projects from '../data/projects.json'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -19,10 +18,10 @@ export default function Home() {
             <h1 className={styles.mainTitle}>Benjamin Scott</h1>
             <p className={styles.subHeader}>Sofware Engineer</p>
             <div className={styles.iconsContainer}>
-              <i className={"fab fa-react " + styles.iconReact}></i>
-              <i className={"fab fa-js-square " + styles.iconJS}></i>
-              <i className={"fas fa-code " + styles.iconCode}></i>
-              <i className={"fab fa-python " + styles.iconPy}></i>
+              <i aria-hidden className={"fab fa-react " + styles.iconReact}></i>
+              <i aria-hidden className={"fab fa-js-square " + styles.iconJS}></i>
+              <i aria-hidden className={"fas fa-code " + styles.iconCode}></i>
+              <i aria-hidden className={"fab fa-python " + styles.iconPy}></i>
             </div>
           </div>
           <div className={styles.getInTouch}>
