@@ -1,22 +1,9 @@
 import Head from 'next/head'
-import {useEffect, useState} from 'react';
 import { BLogo } from '../components/svg/BLogo'
 import _projects from '../data/projects.json'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
-  const [projects, setProjects] = useState(null)
-  useEffect(() => {
-    const getProjects = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(_projects)
-        }, 1000)
-      })
-    }
-    getProjects().then(projects => setProjects(projects))
-  }, [])
-
   return (
     <div className={styles.root}>
       <Head>
