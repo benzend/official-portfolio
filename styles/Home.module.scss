@@ -10,12 +10,22 @@
   padding-bottom: 40vh;
 }
 
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  a {
+    color: white;
+  }
+}
+
 .heroLogo {
   position: absolute;
   top: 20vh;
   left: 50%;
   transform: translateX(-50%);
-  animation: insert-hero-logo .3s linear forwards;
+  animation: insert-hero-logo 0.3s linear forwards;
 }
 
 .heroContent {
@@ -29,15 +39,15 @@
   text-align: center;
   color: var(--white);
   margin-bottom: 10vh;
-  animation: explode-main-title 2s .3s ease-out forwards;
+  animation: explode-main-title 2s 0.3s ease-out forwards;
 }
 
 .subHeader {
   text-transform: uppercase;
   color: var(--white);
   text-align: center;
-  margin-bottom: .8rem;
-  animation: explode-hero-subTitle 2s .3s ease-out forwards;
+  margin-bottom: 0.8rem;
+  animation: explode-hero-subTitle 2s 0.3s ease-out forwards;
 }
 
 .iconsContainer {
@@ -48,25 +58,28 @@
   margin: auto;
 }
 
-
 .iconReact {
-  color: #61DBFB;
-  animation: explode-react-icon 2s .3s ease-out forwards, dance-react-icon 8s 2.3s linear infinite;
+  color: #61dbfb;
+  animation: explode-react-icon 2s 0.3s ease-out forwards,
+    dance-react-icon 8s 2.3s linear infinite;
 }
 
 .iconJS {
   color: #f0db4f;
-  animation: explode-js-icon 2s .3s ease-out forwards, dance-js-icon 2s 2.3s ease infinite;
+  animation: explode-js-icon 2s 0.3s ease-out forwards,
+    dance-js-icon 2s 2.3s ease infinite;
 }
 
 .iconCode {
   color: var(--white);
-  animation: explode-code-icon 2s .3s ease-out forwards, dance-code-icon 3s 2.3s ease infinite;
+  animation: explode-code-icon 2s 0.3s ease-out forwards,
+    dance-code-icon 3s 2.3s ease infinite;
 }
 
 .iconPy {
   color: #306998;
-  animation: explode-py-icon 2s .3s ease-out forwards, dance-py-icon 4s 2.3s ease infinite;
+  animation: explode-py-icon 2s 0.3s ease-out forwards,
+    dance-py-icon 4s 2.3s ease infinite;
 }
 
 .getInTouch {
@@ -74,12 +87,12 @@
   margin-top: 10rem;
   color: white;
   opacity: 0;
-  animation: get-in-touch .4s 3s ease forwards;
+  animation: get-in-touch 0.4s 3s ease forwards;
 }
 
 @media screen and (max-width: 500px) {
   .heroLogo {
-    animation: insert-hero-logo-mobile .3s linear forwards;
+    animation: insert-hero-logo-mobile 0.3s linear forwards;
   }
   .heroSection {
     padding-top: 20vh;
@@ -92,7 +105,8 @@
 @keyframes get-in-touch {
   0% {
     opacity: 0;
-  } 100% {
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -100,7 +114,8 @@
 @keyframes insert-hero-logo {
   0% {
     top: -100vh;
-  } 100% {
+  }
+  100% {
     top: 30vh;
   }
 }
@@ -108,18 +123,22 @@
 @keyframes explode-main-title {
   0% {
     transform: translate(0, 0) rotate(0deg);
-  } 90% {
+  }
+  90% {
     transform: translate(-600px, -800px) rotate(-800deg);
-  } 100% {
+  }
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
 }
 @keyframes explode-hero-subTitle {
   0% {
     transform: translate(0, 0) rotate(0deg);
-  } 90% {
+  }
+  90% {
     transform: translate(5px, 30px) rotate(2deg);
-  } 100% {
+  }
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
 }
@@ -127,9 +146,11 @@
 @keyframes explode-react-icon {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
-  } 90% {
-    transform: translate(-2000px, 800px) scale(40)
-  } 100% {
+  }
+  90% {
+    transform: translate(-2000px, 800px) scale(40);
+  }
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
 }
@@ -137,9 +158,11 @@
 @keyframes explode-js-icon {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1) rotate(0);
-  } 90% {
-    transform: translate(-80px, 300px) scale(.4) rotate(300deg)
-  } 100% {
+  }
+  90% {
+    transform: translate(-80px, 300px) scale(0.4) rotate(300deg);
+  }
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1) rotate(0);
   }
 }
@@ -147,9 +170,11 @@
 @keyframes explode-code-icon {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
-  } 90% {
-    transform: translate(30px, -400px) scale(40)
-  } 100% {
+  }
+  90% {
+    transform: translate(30px, -400px) scale(40);
+  }
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
 }
@@ -157,9 +182,11 @@
 @keyframes explode-py-icon {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
-  } 90% {
-    transform: translate(1000px, 800px) scale(40)
-  } 100% {
+  }
+  90% {
+    transform: translate(1000px, 800px) scale(40);
+  }
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
 }
@@ -167,7 +194,8 @@
 @keyframes dance-react-icon {
   0% {
     transform: rotate(0deg);
-  } 100% {
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -175,9 +203,11 @@
 @keyframes dance-js-icon {
   0% {
     transform: rotate(-10deg);
-  } 50% {
+  }
+  50% {
     transform: rotate(10deg);
-  } 100% {
+  }
+  100% {
     transform: rotate(-10deg);
   }
 }
@@ -185,29 +215,41 @@
 @keyframes dance-code-icon {
   0% {
     transform: rotate(0deg);
-  } 3% {
+  }
+  3% {
     transform: rotate(5deg);
-  } 6% {
+  }
+  6% {
     transform: rotate(-5deg);
-  } 9% {
+  }
+  9% {
     transform: rotate(8deg);
-  } 12% {
+  }
+  12% {
     transform: rotate(-8deg);
-  } 15% {
+  }
+  15% {
     transform: rotate(10deg);
-  } 18% {
+  }
+  18% {
     transform: rotate(-10deg);
-  } 21% {
+  }
+  21% {
     transform: rotate(8deg);
-  } 23% {
+  }
+  23% {
     transform: rotate(-8deg);
-  } 25% {
+  }
+  25% {
     transform: rotate(5deg);
-  } 28% {
+  }
+  28% {
     transform: rotate(-5deg);
-  } 31% {
+  }
+  31% {
     transform: rotate(3deg);
-  } 35% {
+  }
+  35% {
     transform: rotate(0deg);
   }
 }
@@ -215,9 +257,11 @@
 @keyframes dance-py-icon {
   0% {
     color: #306998;
-  } 50% {
+  }
+  50% {
     color: #ffd43b;
-  } 100% {
+  }
+  100% {
     color: #306998;
   }
 }
