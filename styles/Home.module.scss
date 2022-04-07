@@ -14,19 +14,6 @@ $third-anim-delay: 20s;
   padding-bottom: 40vh;
 }
 
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  padding: 1rem;
-  z-index: 3;
-
-  a {
-    color: var(--white);
-  }
-}
-
 .heroLogo {
   position: absolute;
   top: 20vh;
