@@ -16,7 +16,7 @@
   left: 0;
 
   a {
-    color: white;
+    color: var(--white);
   }
 }
 
@@ -80,14 +80,6 @@
   color: #306998;
   animation: explode-py-icon 2s 0.3s ease-out forwards,
     dance-py-icon 4s 2.3s ease infinite;
-}
-
-.getInTouch {
-  text-align: center;
-  margin-top: 10rem;
-  color: white;
-  opacity: 0;
-  animation: get-in-touch 0.4s 3s ease forwards;
 }
 
 @media screen and (max-width: 500px) {
