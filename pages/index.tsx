@@ -27,9 +27,6 @@ export default function Home() {
               <i aria-hidden className={'fab fa-python ' + styles.iconPy}></i>
             </div>
           </div>
-          <div className={styles.getInTouch}>
-            <a href="mailto: benjamin.scottt.dev@gmail.com">Get In Touch</a>
-          </div>
           <div className={styles.heroLogo}>
             <BLogo fill="#383838" height="500px" width="500px" />
           </div>
