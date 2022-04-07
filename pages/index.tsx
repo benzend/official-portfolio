@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { BLogo } from '../components/svg/BLogo';
 import styles from '../styles/Home.module.scss';
 
@@ -9,6 +10,9 @@ export default function Home() {
         <title>Benjamin Scott</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <nav className={styles.nav}>
+        <Link href="/blog">Blog</Link>
+      </nav>
       <main>
         <section className={styles.heroSection}>
           <div className={styles.expandingSquareContainer}>
