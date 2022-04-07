@@ -1,3 +1,6 @@
+$first-anim-dur: 2s;
+$second-anim-delay: 2.3s;
+
 .root {
   background-color: var(--background);
   height: 100vh;
@@ -42,7 +45,7 @@
   text-align: center;
   color: var(--white);
   margin-bottom: 10vh;
-  animation: explode-main-title 2s 0.3s ease-out forwards;
+  animation: explode-main-title $first-anim-dur 0.3s ease-out forwards;
 }
 
 .subHeader {
@@ -50,7 +53,7 @@
   color: var(--white);
   text-align: center;
   margin-bottom: 0.8rem;
-  animation: explode-hero-subTitle 2s 0.3s ease-out forwards;
+  animation: explode-hero-subTitle $first-anim-dur 0.3s ease-out forwards;
 }
 
 .iconsContainer {
@@ -63,26 +66,26 @@
 
 .iconReact {
   color: #61dbfb;
-  animation: explode-react-icon 2s 0.3s ease-out forwards,
-    dance-react-icon 8s 2.3s linear infinite;
+  animation: explode-react-icon $first-anim-dur 0.3s ease-out forwards,
+    dance-react-icon 8s $second-anim-delay linear infinite;
 }
 
 .iconJS {
   color: #f0db4f;
-  animation: explode-js-icon 2s 0.3s ease-out forwards,
-    dance-js-icon 2s 2.3s ease infinite;
+  animation: explode-js-icon $first-anim-dur 0.3s ease-out forwards,
+    dance-js-icon 2s $second-anim-delay ease infinite;
 }
 
 .iconCode {
   color: var(--white);
-  animation: explode-code-icon 2s 0.3s ease-out forwards,
-    dance-code-icon 3s 2.3s ease infinite;
+  animation: explode-code-icon $first-anim-dur 0.3s ease-out forwards,
+    dance-code-icon 3s $second-anim-delay ease infinite;
 }
 
 .iconPy {
   color: #306998;
-  animation: explode-py-icon 2s 0.3s ease-out forwards,
-    dance-py-icon 4s 2.3s ease infinite;
+  animation: explode-py-icon $first-anim-dur 0.3s ease-out forwards,
+    dance-py-icon 4s $second-anim-delay ease infinite;
 }
 
 @media screen and (max-width: 500px) {
