@@ -8,11 +8,15 @@ export interface IPost {
   content: string;
   title: string;
   coverImage: string;
-  author: string;
+  author: {
+    name: string;
+    picture: string;
+  };
   ogImage: {
     url: string;
   };
   featured: boolean;
+  excerpt: string;
 }
 
 const postsDirectory = join(process.cwd(), '_posts');
