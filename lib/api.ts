@@ -3,7 +3,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 
 export interface IPost {
-  date: Date;
+  date: string;
   slug: string;
   content: string;
   title: string;
