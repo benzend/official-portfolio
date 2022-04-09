@@ -8,6 +8,7 @@ author:
   picture: '/assets/blog/authors/benjamin-scott.png'
 ogImage:
   url: '/assets/blog/creating-a-nextjs-blog-site/cover.jpeg'
+featured: true
 ---
 
 Why would you want to start creating your first blog site using Next.js?
