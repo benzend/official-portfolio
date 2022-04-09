@@ -10,13 +10,13 @@ interface IBlogProps {
 export default function Blog({ posts }: IBlogProps) {
   return (
     <Container>
-      <h1 className="text-8xl md:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-10 text-center md:text-left">
+      <h1 className="text-8xl md:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-10 mt-10 text-center md:text-left">
         Blog
       </h1>
       {posts.map((post) => (
         <Link href={`/posts/${post.slug}`}>
           <div key={post.title}>
-            <h2 className="text-xl md:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-center md:text-left">
+            <h2 className="text-xl md:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-center md:text-left hover:underline cursor-pointer">
               {post.title}
             </h2>
             <p className="mb-4">{post.excerpt}</p>
