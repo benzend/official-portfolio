@@ -1,6 +1,6 @@
-$first-anim-dur: 10s;
-$second-anim-dur: 10s;
-$third-anim-delay: 20s;
+$first-anim-dur: 5s;
+$second-anim-dur: 2s;
+$third-anim-delay: 7s;
 
 .root {
   background-color: var(--background);
@@ -115,7 +115,7 @@ $third-anim-delay: 20s;
     transform: translate(0, 0) rotate(0deg);
   }
   90% {
-    transform: translate(-600px, -800px) rotate(-800deg);
+    transform: translate(-300px, -400px) rotate(-200deg);
   }
   100% {
     transform: translate(0, 0) rotate(0deg);
@@ -126,7 +126,7 @@ $third-anim-delay: 20s;
     transform: translate(0, 0) rotate(0deg);
   }
   90% {
-    transform: translate(5px, 30px) rotate(2deg);
+    transform: translate(5px, 80px) rotate(5deg);
   }
   100% {
     transform: translate(0, 0) rotate(0deg);
@@ -138,7 +138,7 @@ $third-anim-delay: 20s;
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
   90% {
-    transform: translate(-2000px, 800px) scale(40);
+    transform: translate(-500px, 200px) scale(10);
   }
   100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
@@ -162,7 +162,7 @@ $third-anim-delay: 20s;
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
   90% {
-    transform: translate(30px, -1500px) scale(40);
+    transform: translate(30px, -400px) scale(10);
   }
   100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
@@ -174,7 +174,7 @@ $third-anim-delay: 20s;
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
   90% {
-    transform: translate(1000px, 800px) scale(40);
+    transform: translate(500px, 400px) scale(20);
   }
   100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
