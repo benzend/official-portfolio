@@ -12,6 +12,7 @@ export interface IPost {
   ogImage: {
     url: string;
   };
+  featured: boolean;
 }
 
 const postsDirectory = join(process.cwd(), '_posts');
@@ -51,5 +52,14 @@ export function getAllPosts(fields = []) {
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1: IPost, post2: IPost) => (post1.date > post2.date ? -1 : 1));
+  return posts;
+}
+
+export function getFeaturedPosts(fields = []) {
+  const slugs = getPostSlugs();
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    .filter((post) => post.featured)
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
