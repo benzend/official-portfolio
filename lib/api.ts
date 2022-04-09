@@ -7,6 +7,11 @@ export interface IPost {
   slug: string;
   content: string;
   title: string;
+  coverImage: string;
+  author: string;
+  ogImage: {
+    url: string;
+  };
 }
 
 const postsDirectory = join(process.cwd(), '_posts');

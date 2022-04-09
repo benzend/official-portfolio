@@ -11,6 +11,12 @@ import Head from 'next/head';
 // import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml';
 import { PostBody } from '../../components/PostBody';
+import { PostTitle } from '../../components/PostTitle';
+import Layout from '../../components/Layout';
+import { Container } from '../../components/Container';
+import { Header } from '../../components/Header';
+import { PostHeader } from '../../components/PostHeader';
+import { CMS_NAME } from '../../lib/constants';
 
 interface IPostProps {
   post: IPost;
@@ -25,12 +31,32 @@ export default function Post({ post, morePosts, preview }: IPostProps) {
   }
 
   return (
-    <div>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
-      <PostBody content={post.content} />
-    </div>
+    <Layout preview={preview}>
+      <Container>
+        <Header />
+        {router.isFallback ? (
+          <PostTitle>Loading…</PostTitle>
+        ) : (
+          <>
+            <article className="mb-32">
+              <Head>
+                <title>
+                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                </title>
+                <meta property="og:image" content={post.ogImage.url} />
+              </Head>
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                author={post.author}
+              />
+              <PostBody content={post.content} />
+            </article>
+          </>
+        )}
+      </Container>
+    </Layout>
   );
   // return (
   //   <Layout preview={preview}>
