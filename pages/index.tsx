@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           <div className={styles.heroContent}>
             <h1 className={styles.mainTitle}>Benjamin Scott</h1>
-            <p className={styles.subHeader}>Sofware Engineer</p>
+            <p className={styles.subHeader}>Sofware Engineer | Designer</p>
             <div className={styles.iconsContainer}>
               <i aria-hidden className={'fab fa-react ' + styles.iconReact}></i>
               <i

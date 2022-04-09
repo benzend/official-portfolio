@@ -18,9 +18,9 @@
 }
 
 .markdown a {
-  color: var(--blue);
+  @apply hover:underline text-blue;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+.markdown ul {
+  @apply list-disc list-inside;
 }
