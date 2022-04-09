@@ -6,6 +6,7 @@ export interface IPost {
   date: Date;
   slug: string;
   content: string;
+  title: string;
 }
 
 const postsDirectory = join(process.cwd(), '_posts');

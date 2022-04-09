@@ -10,6 +10,7 @@ import { getPostBySlug, getAllPosts, IPost } from '../../lib/api';
 import Head from 'next/head';
 // import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml';
+import { PostBody } from '../../components/PostBody';
 
 interface IPostProps {
   post: IPost;
@@ -17,7 +18,7 @@ interface IPostProps {
   preview: unknown;
 }
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts, preview }: IPostProps) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -28,7 +29,7 @@ export default function Post({ post, morePosts, preview }) {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <div>{post.content}</div>
+      <PostBody content={post.content} />
     </div>
   );
   // return (
