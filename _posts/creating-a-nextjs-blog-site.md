@@ -42,3 +42,5 @@ If you've never used Next.js before but have familiarity with React (highly reco
 tutorial is perfect for you! However even with little to no React or Next.js experience, you
 should be fine in following along. It will still provide an easy to digest thesis around the language
 that you will be digesting something valuable out of it.
+
+To be continued...
