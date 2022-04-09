@@ -16,27 +16,27 @@ export default function Blog({ posts }: IBlogProps) {
         </h1>
       </Link>
       {posts.map((post) => (
-        <Link href={`/posts/${post.slug}`}>
-          <div key={post.title}>
+        <div key={post.title}>
+          <Link href={`/posts/${post.slug}`}>
             <h2 className="text-xl md:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-center md:text-left hover:underline cursor-pointer">
               {post.title}
             </h2>
-            <p className="mb-4">{post.excerpt}</p>
+          </Link>
+          <p className="mb-4">{post.excerpt}</p>
 
-            <Avatar
-              name={post.author.name}
-              picture={post.author.picture}
-              customStyles={{
-                picture: { marginRight: '1rem', width: 40, height: 40 },
-                name: {
-                  fontWeight: '500',
-                  fontSize: '1rem',
-                  fontFamily: "'Quicksand', sans-serif",
-                },
-              }}
-            />
-          </div>
-        </Link>
+          <Avatar
+            name={post.author.name}
+            picture={post.author.picture}
+            customStyles={{
+              picture: { marginRight: '1rem', width: 40, height: 40 },
+              name: {
+                fontWeight: '500',
+                fontSize: '1rem',
+                fontFamily: "'Quicksand', sans-serif",
+              },
+            }}
+          />
+        </div>
       ))}
     </Container>
   );
