@@ -28,7 +28,7 @@ export default function Blog({ posts }: IBlogProps) {
             name={post.author.name}
             picture={post.author.picture}
             customStyles={{
-              picture: { marginRight: '1rem', width: 40, height: 40 },
+              picture: { marginRight: '1rem', width: 30, height: 30 },
               name: {
                 fontWeight: '500',
                 fontSize: '1rem',
