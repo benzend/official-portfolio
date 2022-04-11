@@ -81,12 +81,6 @@ $third-anim-delay: 7s;
 }
 
 @media screen and (max-width: 500px) {
-  .heroLogo {
-    animation: insert-hero-logo-mobile 0.3s linear forwards;
-  }
-  .heroSection {
-    padding-top: 20vh;
-  }
   .mainTitle {
     font-size: 3rem;
   }
