@@ -26,7 +26,7 @@ export default function Blog({ posts }: IBlogProps) {
                 customStyles={{
                   fontStyle: 'italic',
                   fontWeight: 300,
-                  color: '#666',
+                  color: 'var(--white)',
                   fontSize: '.8rem',
                 }}
               />

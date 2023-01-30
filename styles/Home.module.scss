@@ -3,7 +3,6 @@ $second-anim-dur: 2s;
 $third-anim-delay: 7s;
 
 .root {
-  background-color: var(--background);
   height: 100vh;
   overflow: hidden;
 }
@@ -31,7 +30,6 @@ $third-anim-delay: 7s;
   font-size: 5rem;
   text-transform: uppercase;
   text-align: center;
-  color: var(--white);
   margin-bottom: 10vh;
   animation: explode-main-title $second-anim-dur $first-anim-dur ease-out
     forwards;
@@ -39,7 +37,6 @@ $third-anim-delay: 7s;
 
 .subHeader {
   text-transform: uppercase;
-  color: var(--white);
   text-align: center;
   margin-bottom: 0.8rem;
   animation: explode-hero-subTitle $second-anim-dur $first-anim-dur ease-out

@@ -22,7 +22,7 @@ class MyDocument extends Document {
           />
           <meta name="author" content="Benjamin Scott" />
         </Head>
-        <body>
+        <body className='bg-background text-white'>
           <Main />
           <NextScript />
         </body>
