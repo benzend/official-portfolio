@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { getPostBySlug, getAllPosts, IPost } from '../../lib/api';
+import { getPostBySlug, getAllPosts } from '../../lib/api';
+import { PostType } from '../../interfaces/post'
 import Head from 'next/head';
 import markdownToHtml from '../../lib/markdownToHtml';
 import { PostBody } from '../../components/PostBody';
@@ -12,8 +13,8 @@ import { PostHeader } from '../../components/PostHeader';
 import { CMS_NAME } from '../../lib/constants';
 
 interface IPostProps {
-  post: IPost;
-  morePosts: IPost[];
+  post: PostType;
+  morePosts: PostType[];
   preview: unknown;
 }
 
@@ -79,7 +80,7 @@ export async function getStaticPaths() {
   const posts = getAllPosts(['slug']);
 
   return {
-    paths: posts.map((post: IPost) => {
+    paths: posts.map((post) => {
       return {
         params: {
           slug: post.slug,
