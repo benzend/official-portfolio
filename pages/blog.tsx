@@ -13,7 +13,7 @@ export default function Blog({ posts }: IBlogProps) {
   return (
     <Container>
       <Link href="/">
-        <h1 className="text-7xl md:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-10 mt-10 cursor-pointer">
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-10 mt-10 cursor-pointer">
           Blog
         </h1>
       </Link>
