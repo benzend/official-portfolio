@@ -1,9 +1,20 @@
 import Head from 'next/head';
 import { Nav } from '../components/Nav';
 import { BLogo } from '../components/svg/BLogo';
+import { animated, useSpring } from '@react-spring/web';
+
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
+  const [props, _api] = useSpring(() => ({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    }
+  }))
+
   return (
     <div className={styles.root}>
       <Head>
@@ -11,14 +22,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <main>
+      <animated.main style={props} className='h-full'>
         <section className={styles.heroSection}>
           <div className={styles.expandingSquareContainer}>
             <div className={styles.expandingSquare}></div>
           </div>
           <div className={styles.heroContent}>
             <h1 className={styles.mainTitle}>Benjamin Scott</h1>
-            <p className={styles.subHeader}>Sofware Engineer | Designer</p>
+            <p className={styles.subHeader}>Sofware Engineer</p>
             <div className={styles.iconsContainer}>
               <i aria-hidden className={'fab fa-react ' + styles.iconReact}></i>
               <i
@@ -33,7 +44,8 @@ export default function Home() {
             <BLogo fill="#383838" height="500px" width="500px" />
           </div>
         </section>
-      </main>
+        
+      </animated.main>
     </div>
   );
 }
