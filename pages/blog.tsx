@@ -14,7 +14,7 @@ export default function Blog({ posts }: IBlogProps) {
     <Container>
       <Link href="/">
         <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-10 mt-10 cursor-pointer">
-          Blog
+          BenjaminScott.
         </h1>
       </Link>
       <div>
