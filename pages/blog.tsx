@@ -1,11 +1,12 @@
 import { Container } from '../components/Container';
-import { getFeaturedPosts, IPost } from '../lib/api';
+import { getAllPosts } from '../lib/api';
+import { PostType } from '../interfaces/post'
 import { Avatar } from '../components/Avatar';
 import Link from 'next/link';
 import { DateFormatter } from '../components/DateFormatter';
 
 interface IBlogProps {
-  posts: IPost[];
+  posts: PostType[];
 }
 
 export default function Blog({ posts }: IBlogProps) {
@@ -58,7 +59,7 @@ export default function Blog({ posts }: IBlogProps) {
 }
 
 export function getStaticProps() {
-  const posts = getFeaturedPosts([
+  const posts = getAllPosts([
     'title',
     'featured',
     'excerpt',
