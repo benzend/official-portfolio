@@ -8,6 +8,7 @@ interface ICoverImageProps {
   slug?: string;
   height: number;
   width: number;
+  alt: string;
 }
 
 export const CoverImage = ({
@@ -16,11 +17,12 @@ export const CoverImage = ({
   slug,
   height,
   width,
+  alt
 }: ICoverImageProps) => {
   const image = (
     <Image
       src={src}
-      alt={`Cover Image for ${title}`}
+      alt={alt}
       className={cn('shadow-sm', {
         'hover:shadow-md transition-shadow duration-200': slug,
       })}

@@ -1,13 +1,16 @@
 ---
 title: 'Learn How to Create a Blog Site Using Next.js'
 excerpt: 'Get the specs in creating your first blog site using the popular React based framework, Next.js.'
-coverImage: '/assets/blog/creating-a-nextjs-blog-site/cover.jpeg'
+coverImage: 
+  url: '/assets/blog/creating-a-nextjs-blog-site/cover.jpeg'
+  alt: 'close-up of a laptop on a desk with code on it'
 date: '2022-04-09T05:35:07.322Z'
 author:
   name: Benjamin Scott
   picture: '/assets/blog/authors/benjamin-scott.png'
 ogImage:
   url: '/assets/blog/creating-a-nextjs-blog-site/cover.jpeg'
+  alt: 'close-up of a laptop on a desk with code on it'
 featured: true
 ---
 
