@@ -34,7 +34,7 @@ export default function Blog({ posts }: IBlogProps) {
               <Link href={`/posts/${post.slug}`} key={post.title}>
                 <CardAnimate>
                   <Card className='cursor-pointer h-full'>
-                    <CardImage src={post.ogImage.url} width="200" height="100" />
+                    <CardImage src={post.ogImage.url} />
                     <CardContent>
                       <div className="mb-2">
                         <DateFormatter
