@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </section>
         
-        <footer className="flex justify-end mx-auto w-full bottom-0 inset-x-0 mr-2 mb-1">
+        <footer className="flex absolute justify-end mx-auto w-full bottom-0 inset-x-0 mr-2 mb-1">
           <section className="flex gap-2">
             <a href="https://github.com/benzend">
               <i aria-hidden className="fab fa-github"></i>
