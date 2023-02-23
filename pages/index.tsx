@@ -21,7 +21,6 @@ export default function Home() {
         <title>Benjamin Scott</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
       <animated.main style={props} className='h-full'>
         <section className={styles.heroSection}>
           <div className={styles.expandingSquareContainer}>
@@ -45,6 +44,19 @@ export default function Home() {
           </div>
         </section>
         
+        <footer className="flex justify-end mx-auto w-full bottom-0 inset-x-0 mr-2 mb-1">
+          <section className="flex gap-2">
+            <a href="https://github.com/benzend">
+              <i aria-hidden className="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/benjamin-scottt">
+              <i aria-hidden className="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello Benjamin">
+              <i aria-hidden className="fas fa-envelope"></i>
+            </a>
+          </section>
+        </footer>
       </animated.main>
     </div>
   );
