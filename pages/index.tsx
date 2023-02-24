@@ -1,9 +1,23 @@
 import Head from 'next/head';
-import { Nav } from '../components/Nav';
 import { BLogo } from '../components/svg/BLogo';
 import { animated, useSpring } from '@react-spring/web';
+import { Cli, CliCommand } from '../components/Cli';
 
 import styles from '../styles/Home.module.scss';
+
+const COMMANDS: CliCommand[] = [
+  {
+    text: 'find',
+    value: null,
+    subcommands: [
+      {
+        text: 'page',
+        value: null,
+      },
+    ],
+    flags: [],
+  }
+];
 
 export default function Home() {
   const [props, _api] = useSpring(() => ({
@@ -26,6 +40,7 @@ export default function Home() {
           <div className={styles.expandingSquareContainer}>
             <div className={styles.expandingSquare}></div>
           </div>
+        
           <div className={styles.heroContent}>
             <h1 className={styles.mainTitle}>Benjamin Scott</h1>
             <p className={styles.subHeader}>Sofware Engineer</p>
@@ -39,11 +54,14 @@ export default function Home() {
               <i aria-hidden className={'fab fa-python ' + styles.iconPy}></i>
             </div>
           </div>
+
+          <Cli commands={COMMANDS} />
+
           <div className={styles.heroLogo}>
             <BLogo fill="#383838" height="500px" width="500px" />
           </div>
         </section>
-        
+
         <footer className="flex absolute justify-end mx-auto w-full bottom-0 inset-x-0 mr-2 mb-1">
           <section className="flex gap-2">
             <a href="https://github.com/benzend">
