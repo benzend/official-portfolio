@@ -19,10 +19,11 @@ export interface CliCommand {
 }
 
 export interface CliProps {
-  commands: CliCommand[]
+  commands: CliCommand[],
+  handleExit: () => void,
 }
 
-export const Cli = ({ commands }: CliProps) => {
+export const Cli = ({ commands, handleExit }: CliProps) => {
 
   const helpDialog = parseCliForDialog(commands);
 
@@ -43,6 +44,13 @@ export const Cli = ({ commands }: CliProps) => {
     if (command.text === 'clr') {
       setHistory('')
       setText('');
+      return;
+    }
+
+    if (command.text === 'exit') {
+      setHistory('');
+      setText('');
+      handleExit();
       return;
     }
 

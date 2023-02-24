@@ -134,7 +134,7 @@ export default function Home() {
       </animated.main>
 
       <Modal show={showCliModal}> 
-        <Cli commands={cliCommands} />
+        <Cli commands={cliCommands} handleExit={() => setShowCliModal(false)} />
       </Modal>
     </div>
   );
