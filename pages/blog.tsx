@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { useState, useCallback, useEffect } from 'react';
 import { Container } from '../components/Container';
 import { getAllPosts } from '../lib/api';
 import { PostType } from '../interfaces/post'
@@ -6,6 +8,8 @@ import NextLink from 'next/link';
 import { DateFormatter } from '../components/DateFormatter';
 import { Card, CardAnimate, CardContent, CardImage } from '../components/Card';
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
+import { Cli, CliCommand } from '../components/Cli';
+import { Modal } from '../components/Modal';
 import 'react-tabs/style/react-tabs.css';
 
 interface IBlogProps {
@@ -14,6 +18,67 @@ interface IBlogProps {
 
 export default function Blog({ posts }: IBlogProps) {
   const projects = [];
+
+  const [showCliModal, setShowCliModal] = useState(false);
+  const [keysPressed, setKeysPressed] = useState([]);
+  const [keyPressTimeout, setKeyPressTimeout] = useState(null);
+
+
+  const handleKeyPress = useCallback((event) => {
+    setKeyPressTimeout(
+      setTimeout(() => {
+        setKeysPressed([]);
+      }, 500)
+    );
+
+    if (keysPressed[0] === ' ' && event.key === 't') {
+      setShowCliModal(prev => !prev);
+      return setKeysPressed([]);
+    }
+
+    setKeysPressed(keysPressed => [...keysPressed, event.key]);
+  }, [keysPressed]);
+
+  const router = useRouter();
+
+  const cliCommands: CliCommand[] = [
+    {
+      text: 'ls',
+      value: null,
+      subcommands: [
+        {
+          text: 'pages',
+          value: null,
+        },
+      ],
+      flags: [],
+      callback: (self, outputCallback) => {
+        outputCallback("home");
+      }
+    },
+    {
+      text: 'cd',
+      value: null,
+      subcommands: [],
+      flags: [],
+      callback: (self, outputCallback) => {
+        if (self.value === 'home') {
+          router.push('/');
+          setShowCliModal(false);
+        }
+      }
+    },
+  ];
+
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener('keydown', handleKeyPress);
+
+    // remove the event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
 
   return (
     <Container>
@@ -88,6 +153,11 @@ export default function Blog({ posts }: IBlogProps) {
           </div>
         </TabPanel>
       </Tabs>
+
+
+      <Modal show={showCliModal}> 
+        <Cli commands={cliCommands} />
+      </Modal>
     </Container>
   );
 }
