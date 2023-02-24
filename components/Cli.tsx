@@ -48,7 +48,7 @@ export const Cli = ({ commands }: CliProps) => {
   }
 
   return (
-    <section className="relative flex flex-col-reverse overflow-auto max-h-100 max-w-1/2 w-screen">
+    <section className="relative flex flex-col-reverse overflow-auto max-h-80 max-w-1/2 w-screen">
       <form onSubmit={handleSubmit} className="bg-black text-white w-full p-4">
         <pre className="w-full">{history}</pre>
         <div className="flex gap-3">
