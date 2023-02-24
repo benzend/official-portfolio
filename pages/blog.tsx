@@ -21,7 +21,7 @@ export default function Blog({ posts }: IBlogProps) {
 
   const [showCliModal, setShowCliModal] = useState(false);
   const [keysPressed, setKeysPressed] = useState([]);
-  const [keyPressTimeout, setKeyPressTimeout] = useState(null);
+  const [_, setKeyPressTimeout] = useState(null);
 
 
   const handleKeyPress = useCallback((event) => {
@@ -32,7 +32,9 @@ export default function Blog({ posts }: IBlogProps) {
     );
 
     if (keysPressed[0] === ' ' && event.key === 't') {
-      setShowCliModal(prev => !prev);
+      setTimeout(() => {
+        setShowCliModal(prev => !prev);
+      }, 10);
       return setKeysPressed([]);
     }
 

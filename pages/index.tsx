@@ -30,7 +30,9 @@ export default function Home() {
     );
 
     if (keysPressed[0] === ' ' && event.key === 't') {
-      setShowCliModal(prev => !prev);
+      setTimeout(() => {
+        setShowCliModal(prev => !prev);
+      }, 10);
       return setKeysPressed([]);
     }
 
