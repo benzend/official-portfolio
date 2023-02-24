@@ -40,6 +40,12 @@ export const Cli = ({ commands }: CliProps) => {
       return;
     }
 
+    if (command.text === 'clr') {
+      setHistory('')
+      setText('');
+      return;
+    }
+
     setHistory(history => history + "> " + command.text + '\n');
 
     command.callback(command, (outputLog: string) => setHistory(history => history + outputLog + '\n'));
