@@ -13,6 +13,7 @@ export interface CliSubcommand {
 export interface CliCommand {
   text: string,
   value: string | null,
+  callback: (command: CliCommand, outputCallback: (outputLog: string) => void) => string | void,
   subcommands: CliSubcommand[],
   flags: CliFlag[],
 }
@@ -34,16 +35,24 @@ export const Cli = ({ commands }: CliProps) => {
     const command = parseCliInput(text, commands);
 
     if (command.text === 'help') {
-      setHistory(history => history + helpDialog)
+      return setHistory(history => history + '> help\n' + helpDialog)
     }
+
+    setHistory(history => history + "> " + command.text + '\n');
+
+    command.callback(command, (outputLog: string) => setHistory(history => history + outputLog + '\n'));
+
+    setText('');
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <pre>{history}</pre>
-      <input value={text} onChange={(event) => setText(event.target.value)} /> 
-      <input type="submit" value="Submit" hidden />
-    </form>
+    <section className="relative">
+      <form onSubmit={handleSubmit} className="bg-black text-white absolute top-0">
+        <pre className="max-h-40 overflow-auto w-100">{history}</pre>
+        <span>{">"}</span> <input value={text} onChange={(event) => setText(event.target.value)} className="w-100 bg-black focus:outline-none cursor-default"/> 
+        <input type="submit" value="Submit" hidden />
+      </form>
+    </section>
   );
 }
 
@@ -53,6 +62,7 @@ function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCom
     value: null,
     subcommands: [],
     flags: [],
+    callback: () => {},
   };
 
   if (!cliInput) return helpCommand;
@@ -70,6 +80,7 @@ function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCom
     value: command.value,
     subcommands: [subcommand],
     flags,
+    callback: command.callback,
   }
 }
 

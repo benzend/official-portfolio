@@ -7,15 +7,18 @@ import styles from '../styles/Home.module.scss';
 
 const COMMANDS: CliCommand[] = [
   {
-    text: 'find',
+    text: 'ls',
     value: null,
     subcommands: [
       {
-        text: 'page',
+        text: 'pages',
         value: null,
       },
     ],
     flags: [],
+    callback: (self, outputCallback) => {
+      outputCallback("blog  projects");
+    }
   }
 ];
 
