@@ -156,7 +156,7 @@ export default function Blog({ posts }: IBlogProps) {
 
 
       <Modal show={showCliModal}> 
-        <Cli commands={cliCommands} />
+        <Cli commands={cliCommands} handleExit={() => setShowCliModal(false)} />
       </Modal>
     </Container>
   );
