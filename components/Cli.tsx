@@ -108,7 +108,15 @@ function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCom
 
 function findCliCommand(cliInput: string, possibleCommands: CliCommand[]): CliCommand | null {
   const commandText = cliInput.split(' ')[0];
-  return possibleCommands.find(possibleCommand => commandText === possibleCommand.text) || null;
+  const command = possibleCommands.find(possibleCommand => commandText === possibleCommand.text) || null;
+  if (!command || command.subcommands.length) return command;
+  const cliInputWithNoFlags = cleanCliInput(cliInput, { removeType: 'flags' });
+  const value = cliInputWithNoFlags.split(' ')[1] || null;
+
+  return {
+    ...command,
+    value,
+  }
 }
 
 function findCliSubcommand(cliInput: string, command: CliCommand): CliSubcommand | null {
