@@ -20,7 +20,8 @@
     "react-tabs": "^4.2.1",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "sass": "^1.50.0"
+    "sass": "^1.50.0",
+    "ts-command-line-args": "^2.4.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.43",
