@@ -8,6 +8,7 @@ module.exports = {
       white: 'var(--white)',
       black: 'var(--black)',
       background: 'var(--background)',
+      'background-dark': 'var(--background-dark)',
 
       blue: 'var(--blue)',
     }

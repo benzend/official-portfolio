@@ -1,7 +1,9 @@
 import Head from 'next/head';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { BLogo } from '../components/svg/BLogo';
 import { animated, useSpring } from '@react-spring/web';
 import { Cli, CliCommand } from '../components/Cli';
+import { Modal } from '../components/Modal';
 
 import styles from '../styles/Home.module.scss';
 
@@ -30,7 +32,36 @@ export default function Home() {
     to: {
       opacity: 1
     }
-  }))
+  }));
+
+  const [showCliModal, setShowCliModal] = useState(false);
+  const [keysPressed, setKeysPressed] = useState([]);
+  const [keyPressTimeout, setKeyPressTimeout] = useState(null);
+
+  const handleKeyPress = useCallback((event) => {
+    setKeyPressTimeout(
+      setTimeout(() => {
+        setKeysPressed([]);
+      }, 500)
+    );
+
+    if (keysPressed[0] === ' ' && event.key === 't') {
+      setShowCliModal(prev => !prev);
+      return setKeysPressed([]);
+    }
+
+    setKeysPressed(keysPressed => [...keysPressed, event.key]);
+  }, [keysPressed]);
+
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener('keydown', handleKeyPress);
+
+    // remove the event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
 
   return (
     <div className={styles.root}>
@@ -38,6 +69,7 @@ export default function Home() {
         <title>Benjamin Scott</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <animated.main style={props} className='h-full'>
         <section className={styles.heroSection}>
           <div className={styles.expandingSquareContainer}>
@@ -46,6 +78,12 @@ export default function Home() {
         
           <div className={styles.heroContent}>
             <h1 className={styles.mainTitle}>Benjamin Scott</h1>
+            <p className="text-center mb-6 animate-pulse">
+              Press <code className="mx-1 py-1 px-2 rounded-md bg-background-dark">
+                      {"<space>"} + t
+                    </code>&nbsp;
+              to open the command line
+            </p>
             <p className={styles.subHeader}>Sofware Engineer</p>
             <div className={styles.iconsContainer}>
               <i aria-hidden className={'fab fa-react ' + styles.iconReact}></i>
@@ -58,7 +96,6 @@ export default function Home() {
             </div>
           </div>
 
-          <Cli commands={COMMANDS} />
 
           <div className={styles.heroLogo}>
             <BLogo fill="#383838" height="500px" width="500px" />
@@ -79,6 +116,10 @@ export default function Home() {
           </section>
         </footer>
       </animated.main>
+
+      <Modal show={showCliModal}> 
+        <Cli commands={COMMANDS} />
+      </Modal>
     </div>
   );
 }
