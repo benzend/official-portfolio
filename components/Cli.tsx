@@ -35,7 +35,9 @@ export const Cli = ({ commands }: CliProps) => {
     const command = parseCliInput(text, commands);
 
     if (command.text === 'help') {
-      return setHistory(history => history + '> help\n' + helpDialog)
+      setHistory(history => history + '> help\n' + helpDialog)
+      setText('');
+      return;
     }
 
     setHistory(history => history + "> " + command.text + '\n');
@@ -46,9 +48,9 @@ export const Cli = ({ commands }: CliProps) => {
   }
 
   return (
-    <section className="relative">
-      <form onSubmit={handleSubmit} className="bg-black text-white absolute top-0">
-        <pre className="max-h-40 overflow-auto w-100">{history}</pre>
+    <section className="relative flex flex-col-reverse overflow-auto max-h-40 h-full w-100">
+      <form onSubmit={handleSubmit} className="bg-black text-white">
+        <pre className="w-100">{history}</pre>
         <span>{">"}</span> <input value={text} onChange={(event) => setText(event.target.value)} className="w-100 bg-black focus:outline-none cursor-default"/> 
         <input type="submit" value="Submit" hidden />
       </form>
@@ -69,7 +71,13 @@ function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCom
 
   const command = findCliCommand(cliInput, possibleCommands);
 
-  if (!command) return helpCommand;
+  if (!command) return {
+    text: cliInput,
+    value: null,
+    subcommands: [],
+    flags: [],
+    callback: () => {},
+  };
 
   const subcommand = findCliSubcommand(cliInput, command);
 
