@@ -51,7 +51,7 @@ export default function Home() {
       ],
       flags: [],
       callback: (self, outputCallback) => {
-        outputCallback("blog  projects");
+        outputCallback("blog");
       }
     },
     {
