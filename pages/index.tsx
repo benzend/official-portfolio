@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { BLogo } from '../components/svg/BLogo';
 import { animated, useSpring } from '@react-spring/web';
@@ -6,23 +7,6 @@ import { Cli, CliCommand } from '../components/Cli';
 import { Modal } from '../components/Modal';
 
 import styles from '../styles/Home.module.scss';
-
-const COMMANDS: CliCommand[] = [
-  {
-    text: 'ls',
-    value: null,
-    subcommands: [
-      {
-        text: 'pages',
-        value: null,
-      },
-    ],
-    flags: [],
-    callback: (self, outputCallback) => {
-      outputCallback("blog  projects");
-    }
-  }
-];
 
 export default function Home() {
   const [props, _api] = useSpring(() => ({
@@ -52,6 +36,38 @@ export default function Home() {
 
     setKeysPressed(keysPressed => [...keysPressed, event.key]);
   }, [keysPressed]);
+
+  const router = useRouter();
+
+  const cliCommands: CliCommand[] = [
+    {
+      text: 'ls',
+      value: null,
+      subcommands: [
+        {
+          text: 'pages',
+          value: null,
+        },
+      ],
+      flags: [],
+      callback: (self, outputCallback) => {
+        outputCallback("blog  projects");
+      }
+    },
+    {
+      text: 'cd',
+      value: null,
+      subcommands: [],
+      flags: [],
+      callback: (self, outputCallback) => {
+        if (self.value === 'blog') {
+          router.push('/blog');
+          setShowCliModal(false);
+        }
+      }
+    },
+  ];
+
 
   useEffect(() => {
     // attach the event listener
@@ -118,7 +134,7 @@ export default function Home() {
       </animated.main>
 
       <Modal show={showCliModal}> 
-        <Cli commands={COMMANDS} />
+        <Cli commands={cliCommands} />
       </Modal>
     </div>
   );
