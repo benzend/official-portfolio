@@ -48,10 +48,18 @@ export const Cli = ({ commands }: CliProps) => {
   }
 
   return (
-    <section className="relative flex flex-col-reverse overflow-auto max-h-40 h-full w-100">
-      <form onSubmit={handleSubmit} className="bg-black text-white">
-        <pre className="w-100">{history}</pre>
-        <span>{">"}</span> <input value={text} onChange={(event) => setText(event.target.value)} className="w-100 bg-black focus:outline-none cursor-default"/> 
+    <section className="relative flex flex-col-reverse overflow-auto max-h-100 max-w-1/2 w-screen">
+      <form onSubmit={handleSubmit} className="bg-black text-white w-full p-4">
+        <pre className="w-full">{history}</pre>
+        <div className="flex gap-3">
+          <span>{">"}</span> 
+          <input 
+            value={text} 
+            onChange={(event) => setText(event.target.value)} 
+            className="bg-black focus:outline-none cursor-default flex-1" 
+            autoFocus
+          /> 
+        </div>
         <input type="submit" value="Submit" hidden />
       </form>
     </section>
