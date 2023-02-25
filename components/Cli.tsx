@@ -86,6 +86,7 @@ export const Cli = ({ commands, handleExit }: CliProps) => {
 function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCommand {
   const helpCommand: CliCommand = {
     text: 'help',
+    description: 'Lists out all of the possible commands',
     value: null,
     subcommands: [],
     flags: [],
@@ -98,6 +99,7 @@ function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCom
 
   if (!command) return {
     text: cliInput,
+    description: 'Unknown',
     value: null,
     subcommands: [],
     flags: [],
@@ -110,6 +112,7 @@ function parseCliInput(cliInput: string, possibleCommands: CliCommand[]): CliCom
 
   return {
     text: command.text,
+    description: command.description,
     value: command.value,
     subcommands: [subcommand],
     flags,
@@ -147,7 +150,18 @@ function findFlags(cliInput: string, command: CliCommand): CliFlag[] {
 
   const flagArgs = cliInput.split(' ').filter(arg => isArgFlag(arg));
 
-  return flagArgs.map(flagArg => parseFlagArg(flagArg));
+  return flagArgs.map(flagArg => { 
+    const flagWithoutDescription = parseFlagArg(flagArg);
+
+    const validFlag = command.flags.find(flag => flag.text === flagWithoutDescription.text);
+
+    if (!validFlag) return null;
+
+    return {
+      ...validFlag,
+      value: flagWithoutDescription.value,
+    }
+  });
 }
 
 function parseFlagArg(flagArg: string): CliFlag {
@@ -159,6 +173,7 @@ function parseFlagArg(flagArg: string): CliFlag {
 
   return {
     text: flagText,
+    description: '',
     value: flagValue,
   }
 }
