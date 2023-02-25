@@ -2,17 +2,20 @@ import { useState, FormEvent } from 'react';
 
 export interface CliFlag {
   text: string,
+  description: string,
   value: string | null,
 }
 
 export interface CliSubcommand {
   text: string,
+  description: string,
   value: string | null,
 }
 
 export interface CliCommand {
   text: string,
   value: string | null,
+  description: string,
   callback: (command: CliCommand, outputCallback: (outputLog: string) => void) => string | void,
   subcommands: CliSubcommand[],
   flags: CliFlag[],
@@ -186,7 +189,7 @@ function parseCliForDialog(commands: CliCommand[]): string {
   const flagsDialog = flagsAsLines.length ?
     'Flags:\n' + flagsAsLines.join('') : '';
 
-  return commandsDialog + flagsDialog;
+  return commandsDialog + flagsDialog + '\n';
 }
 
 function indent(by: number = 0): string {

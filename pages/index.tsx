@@ -44,13 +44,9 @@ export default function Home() {
   const cliCommands: CliCommand[] = [
     {
       text: 'ls',
+      description: 'Lists the pages you can navigate to using `cd`',
       value: null,
-      subcommands: [
-        {
-          text: 'pages',
-          value: null,
-        },
-      ],
+      subcommands: [],
       flags: [],
       callback: (self, outputCallback) => {
         outputCallback("blog");
@@ -58,6 +54,7 @@ export default function Home() {
     },
     {
       text: 'cd',
+      description: 'Navigates you to the page you want to go to. Use `cd` to see where you can go',
       value: null,
       subcommands: [],
       flags: [],
