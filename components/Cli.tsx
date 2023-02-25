@@ -174,14 +174,10 @@ function isArgFlag(str: string): boolean {
 function parseCliForDialog(commands: CliCommand[]): string {
   const commandsAsLines = commands.map(command => {
     let by = 1;
-    return indent(by) + command.text + '\n\n' +
-      indent(by) + 'Subcommands:\n\n' +
-      indent(by + 1) + parseCliSubcommandsForDialog(command.subcommands, by) + '\n' +
-      indent(by) + 'Flags:\n\n' +
-      parseCliFlagsForDialog(command.flags, by);
+    return indent(by) + command.text;
   });
 
-  return '-- Help -------------- \n\nCommands: \n\n' + commandsAsLines.join();
+  return 'Commands: \n' + commandsAsLines.join('') + '\n';
 }
 
 function indent(by: number = 0): string {
@@ -193,9 +189,9 @@ function indent(by: number = 0): string {
 }
 
 function parseCliFlagsForDialog(flags: CliFlag[], indentBy: number): string {
-  return flags.map(flag => `${indent(indentBy)}--${flag.text}\n`).join();
+  return flags.map(flag => `${indent(indentBy)}--${flag.text}\n`).join('');
 }
 
 function parseCliSubcommandsForDialog(subcommands: CliSubcommand[], indentBy: number): string {
-  return subcommands.map(subcommand => `${indent(indentBy)}${subcommand.text}\n`).join();
+  return subcommands.map(subcommand => `${indent(indentBy)}${subcommand.text}\n`).join('');
 }
