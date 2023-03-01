@@ -30,7 +30,7 @@ export interface ICardImageProps extends ImageProps {
 export const CardImage = (props: ICardImageProps) => {
   return (
     <div className='relative h-40 max-w-full'>
-      <Image src={props.src} alt={props.alt} {...props} layout="fill" />
+      <Image src={props.src} alt={props.alt} {...props} layout="fill" objectFit="cover" />
     </div>
   )
 }

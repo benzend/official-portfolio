@@ -29,6 +29,7 @@ export const CoverImage = ({
       layout="responsive"
       width={width}
       height={height}
+      objectFit="cover"
     />
   );
   return (
