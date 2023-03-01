@@ -82,7 +82,7 @@ export default function Blog({ posts }: IBlogProps) {
   return (
     <Container>
       <NextLink href="/">
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-10 mt-10 cursor-pointer">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-10 mt-10 cursor-pointer">
           BenjaminScott.
         </h1>
       </NextLink>
@@ -94,7 +94,7 @@ export default function Blog({ posts }: IBlogProps) {
         </TabList>
 
         <TabPanel className="py-10">
-          <div className='grid grid-cols-3 gap-5'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {posts.map((post) => (
               <a href={`/posts/${post.slug}`} key={post.title}>
                 <CardAnimate>
@@ -139,7 +139,7 @@ export default function Blog({ posts }: IBlogProps) {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className='grid grid-cols-3 gap-5'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {projects.map((project) => (
               <div key={project.id}>{project.name}</div>
             ))}
