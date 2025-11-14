@@ -12,7 +12,7 @@ export default function Home() {
   }));
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen max-w-screen">
       <animated.main style={props} className="h-full px-6">
         <section className="relative pt-[40vh] pb-[17vh]">
           <div className="hero-logo absolute top-[30vh] left-1/2 -translate-x-1/2 -z-1">
