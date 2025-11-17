@@ -1,12 +1,12 @@
 'use client'
 
-import Link from 'next/link';
-import { BLogo } from './components/svg/BLogo';
+import { BLogo } from '../components/svg/BLogo';
 import { animated, useSpring } from '@react-spring/web';
-import { ScrollAnimation } from './components/ScrollAnimation';
-import { FaReact, FaJsSquare, FaCode, FaPython, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { ScrollAnimation } from '../components/ScrollAnimation';
+import { AllServicesSection } from '../components/AllServicesSection';
+import { FaGem, FaDatabase, FaServer, FaCog, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
-export default function Home() {
+export default function IBuildRorApps() {
   const [props, _api] = useSpring(() => ({
     from: { opacity: 0 },
     to: { opacity: 1 }
@@ -25,20 +25,20 @@ export default function Home() {
               Benjamin Scott
             </h1>
             <p className="sub-header text-sm lg:text-center text-gray-400 mb-3 max-w-sm mx-auto">
-              Software engineer passionate about building exceptional digital experiences.
+              Ruby on Rails developer with a passion for building robust, scalable web applications.
             </p>
             <div className="flex justify-between text-2xl w-[200px] mx-auto">
-              <span className="icon-react text-[#61dbfb]">
-                <FaReact aria-hidden />
+              <span className="icon-ruby text-[#CC342D]">
+                <FaGem aria-hidden />
               </span>
-              <span className="icon-js text-[#f0db4f]">
-                <FaJsSquare aria-hidden />
+              <span className="icon-database text-[#336791]">
+                <FaDatabase aria-hidden />
               </span>
-              <span className="icon-code text-white">
-                <FaCode aria-hidden />
+              <span className="icon-server text-[#FF6B35]">
+                <FaServer aria-hidden />
               </span>
-              <span className="icon-py text-[#306998]">
-                <FaPython aria-hidden />
+              <span className="icon-cog text-[#754C24]">
+                <FaCog aria-hidden />
               </span>
             </div>
           </div>
@@ -47,34 +47,30 @@ export default function Home() {
         <ScrollAnimation direction="up" delay={0.1}>
           <section className="max-w-2xl mx-auto pb-20">
             <ScrollAnimation direction="fade" delay={0.15}>
-              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Building <strong>exceptional software</strong> that solves real problems and delivers value.</h2>
+              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Don't let your <strong>Ruby on Rails application</strong> become a bottleneck for your business growth.</h2>
             </ScrollAnimation>
 
             <div className="max-w-sm lg:mx-auto">
               <ScrollAnimation direction="up" delay={0.2}>
-                <h3 className="text-lg mb-4">What I can help you build:</h3>
+                <h3 className="text-lg mb-4">Common Rails application challenges:</h3>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.25}>
-                <div className="space-y-4 mb-8">
-                  <Link href="/i-build-websites" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Modern Websites</h4>
-                    <p className="text-sm text-gray-400">Fast, responsive, and user-friendly websites that convert visitors into customers.</p>
-                  </Link>
-                  <Link href="/i-build-ror-apps" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Ruby on Rails Applications</h4>
-                    <p className="text-sm text-gray-400">Scalable, maintainable Rails applications built with best practices.</p>
-                  </Link>
-                  <Link href="/i-am-a-software-developer" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Custom Software Solutions</h4>
-                    <p className="text-sm text-gray-400">Tailored software development to solve your unique business challenges.</p>
-                  </Link>
-                </div>
+                <ul className="list-disc list-inside ml-2 mb-8">
+                  <li>Slow database queries and N+1 problems</li>
+                  <li>Poorly structured models and business logic</li>
+                  <li>Inadequate testing coverage</li>
+                  <li>Security vulnerabilities</li>
+                  <li>Performance bottlenecks at scale</li>
+                  <li>Technical debt accumulation</li>
+                </ul>
               </ScrollAnimation>
             </div>
 
           </section>
         </ScrollAnimation>
+
+        <AllServicesSection />
 
         <ScrollAnimation direction="up" delay={0.3}>
           <section className="max-w-2xl mx-auto pb-20">
@@ -84,14 +80,14 @@ export default function Home() {
             
             <ScrollAnimation direction="up" delay={0.4}>
               <p className="lg:text-center mb-8 text-glow">
-                I'm always excited to work on new projects and solve interesting problems. Whether you need a new website, a Rails application, or custom software development, I'd love to hear about your project.
+                I'm always looking for new ways to improve my Rails expertise. If you have any questions about Ruby on Rails development or need help with your application, feel free to reach out using any of the methods below.
               </p>
             </ScrollAnimation>
             
             <ScrollAnimation direction="up" delay={0.45}>
               <div className="lg:max-w-sm mx-auto flex flex-wrap lg:justify-center gap-4 mb-8">
                 <ScrollAnimation direction="left" delay={0.5}>
-                  <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello from your portfolio" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                  <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Ruby on Rails inquiry" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
                     <FaEnvelope aria-hidden />
                     <span>Email</span>
                   </a>
@@ -119,7 +115,7 @@ export default function Home() {
 
             <ScrollAnimation direction="fade" delay={0.7}>
               <p className="lg:text-center text-glow text-xl mx-auto font-bold">
-                <em>Let's build something exceptional together.</em>
+                <em>Build Rails applications that scale with confidence.</em>
               </p>
             </ScrollAnimation>
           </section>
@@ -136,7 +132,7 @@ export default function Home() {
             <a href="https://x.com/TheBenzend" className="hover:text-blue-400 transition-colors">
               <FaTwitter aria-hidden />
             </a>
-            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello from your portfolio" className="hover:text-blue-400 transition-colors">
+            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Ruby on Rails inquiry" className="hover:text-blue-400 transition-colors">
               <FaEnvelope aria-hidden />
             </a>
           </section>
@@ -179,7 +175,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-react-icon {
+        @keyframes explode-ruby-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -191,7 +187,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-js-icon {
+        @keyframes explode-database-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1) rotate(0);
           }
@@ -203,7 +199,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-code-icon {
+        @keyframes explode-server-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -215,7 +211,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-py-icon {
+        @keyframes explode-cog-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -227,7 +223,7 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-react-icon {
+        @keyframes dance-ruby-icon {
           0% {
             transform: rotate(0deg);
           }
@@ -236,7 +232,7 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-js-icon {
+        @keyframes dance-database-icon {
           0% {
             transform: rotate(-10deg);
           }
@@ -248,7 +244,7 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-code-icon {
+        @keyframes dance-server-icon {
           0% {
             transform: rotate(0deg);
           }
@@ -290,15 +286,15 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-py-icon {
+        @keyframes dance-cog-icon {
           0% {
-            color: #306998;
+            color: #754C24;
           }
           50% {
-            color: #ffd43b;
+            color: #8B4513;
           }
           100% {
-            color: #306998;
+            color: #754C24;
           }
         }
 
@@ -314,20 +310,20 @@ export default function Home() {
           opacity: 1;
         }
 
-        .icon-react {
-          animation: dance-react-icon 8s 7s linear infinite;
+        .icon-ruby {
+          animation: dance-ruby-icon 8s 7s linear infinite;
         }
 
-        .icon-js {
-          animation: dance-js-icon 2s 7s ease infinite;
+        .icon-database {
+          animation: dance-database-icon 2s 7s ease infinite;
         }
 
-        .icon-code {
-          animation: dance-code-icon 3s 7s ease infinite;
+        .icon-server {
+          animation: dance-server-icon 3s 7s ease infinite;
         }
 
-        .icon-py {
-          animation: dance-py-icon 4s 7s ease infinite;
+        .icon-cog {
+          animation: dance-cog-icon 4s 7s ease infinite;
         }
 
         @media screen and (max-width: 500px) {

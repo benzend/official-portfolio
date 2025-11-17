@@ -1,12 +1,12 @@
 'use client'
 
-import Link from 'next/link';
-import { BLogo } from './components/svg/BLogo';
+import { BLogo } from '../components/svg/BLogo';
 import { animated, useSpring } from '@react-spring/web';
-import { ScrollAnimation } from './components/ScrollAnimation';
+import { ScrollAnimation } from '../components/ScrollAnimation';
+import { AllServicesSection } from '../components/AllServicesSection';
 import { FaReact, FaJsSquare, FaCode, FaPython, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
-export default function Home() {
+export default function IAmASoftwareDeveloper() {
   const [props, _api] = useSpring(() => ({
     from: { opacity: 0 },
     to: { opacity: 1 }
@@ -25,7 +25,7 @@ export default function Home() {
               Benjamin Scott
             </h1>
             <p className="sub-header text-sm lg:text-center text-gray-400 mb-3 max-w-sm mx-auto">
-              Software engineer passionate about building exceptional digital experiences.
+              Full-stack software developer dedicated to crafting elegant solutions to complex problems.
             </p>
             <div className="flex justify-between text-2xl w-[200px] mx-auto">
               <span className="icon-react text-[#61dbfb]">
@@ -47,34 +47,30 @@ export default function Home() {
         <ScrollAnimation direction="up" delay={0.1}>
           <section className="max-w-2xl mx-auto pb-20">
             <ScrollAnimation direction="fade" delay={0.15}>
-              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Building <strong>exceptional software</strong> that solves real problems and delivers value.</h2>
+              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Don't let <strong>technical debt</strong> and poor architecture hold your software back from reaching its full potential.</h2>
             </ScrollAnimation>
 
             <div className="max-w-sm lg:mx-auto">
               <ScrollAnimation direction="up" delay={0.2}>
-                <h3 className="text-lg mb-4">What I can help you build:</h3>
+                <h3 className="text-lg mb-4">Signs your software needs attention:</h3>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.25}>
-                <div className="space-y-4 mb-8">
-                  <Link href="/i-build-websites" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Modern Websites</h4>
-                    <p className="text-sm text-gray-400">Fast, responsive, and user-friendly websites that convert visitors into customers.</p>
-                  </Link>
-                  <Link href="/i-build-ror-apps" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Ruby on Rails Applications</h4>
-                    <p className="text-sm text-gray-400">Scalable, maintainable Rails applications built with best practices.</p>
-                  </Link>
-                  <Link href="/i-am-a-software-developer" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Custom Software Solutions</h4>
-                    <p className="text-sm text-gray-400">Tailored software development to solve your unique business challenges.</p>
-                  </Link>
-                </div>
+                <ul className="list-disc list-inside ml-2 mb-8">
+                  <li>Code is difficult to maintain and extend</li>
+                  <li>Frequent bugs in production</li>
+                  <li>Poor test coverage or no tests at all</li>
+                  <li>Slow development cycles</li>
+                  <li>Performance issues and bottlenecks</li>
+                  <li>Lack of proper documentation</li>
+                </ul>
               </ScrollAnimation>
             </div>
 
           </section>
         </ScrollAnimation>
+
+        <AllServicesSection />
 
         <ScrollAnimation direction="up" delay={0.3}>
           <section className="max-w-2xl mx-auto pb-20">
@@ -84,14 +80,14 @@ export default function Home() {
             
             <ScrollAnimation direction="up" delay={0.4}>
               <p className="lg:text-center mb-8 text-glow">
-                I'm always excited to work on new projects and solve interesting problems. Whether you need a new website, a Rails application, or custom software development, I'd love to hear about your project.
+                I'm always passionate about software development best practices and clean code principles. If you're looking for a software developer or need technical consultation, I'd love to connect using any of the methods below.
               </p>
             </ScrollAnimation>
             
             <ScrollAnimation direction="up" delay={0.45}>
               <div className="lg:max-w-sm mx-auto flex flex-wrap lg:justify-center gap-4 mb-8">
                 <ScrollAnimation direction="left" delay={0.5}>
-                  <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello from your portfolio" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                  <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Software development inquiry" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
                     <FaEnvelope aria-hidden />
                     <span>Email</span>
                   </a>
@@ -119,7 +115,7 @@ export default function Home() {
 
             <ScrollAnimation direction="fade" delay={0.7}>
               <p className="lg:text-center text-glow text-xl mx-auto font-bold">
-                <em>Let's build something exceptional together.</em>
+                <em>Build software with confidence.</em>
               </p>
             </ScrollAnimation>
           </section>
@@ -136,7 +132,7 @@ export default function Home() {
             <a href="https://x.com/TheBenzend" className="hover:text-blue-400 transition-colors">
               <FaTwitter aria-hidden />
             </a>
-            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello from your portfolio" className="hover:text-blue-400 transition-colors">
+            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Software development inquiry" className="hover:text-blue-400 transition-colors">
               <FaEnvelope aria-hidden />
             </a>
           </section>

@@ -21,7 +21,7 @@ export function ScrollAnimation({
   distance = 50
 }: ScrollAnimationProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "200px" })
   const controls = useAnimation()
 
   useEffect(() => {

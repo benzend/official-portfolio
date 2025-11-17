@@ -1,12 +1,12 @@
 'use client'
 
-import Link from 'next/link';
-import { BLogo } from './components/svg/BLogo';
+import { BLogo } from '../components/svg/BLogo';
 import { animated, useSpring } from '@react-spring/web';
-import { ScrollAnimation } from './components/ScrollAnimation';
-import { FaReact, FaJsSquare, FaCode, FaPython, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { ScrollAnimation } from '../components/ScrollAnimation';
+import { AllServicesSection } from '../components/AllServicesSection';
+import { FaHtml5, FaCss3Alt, FaReact, FaMobileAlt, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
-export default function Home() {
+export default function IBuildWebsites() {
   const [props, _api] = useSpring(() => ({
     from: { opacity: 0 },
     to: { opacity: 1 }
@@ -25,20 +25,20 @@ export default function Home() {
               Benjamin Scott
             </h1>
             <p className="sub-header text-sm lg:text-center text-gray-400 mb-3 max-w-sm mx-auto">
-              Software engineer passionate about building exceptional digital experiences.
+              Software engineer with a passion for building and maintaining high quality software.
             </p>
             <div className="flex justify-between text-2xl w-[200px] mx-auto">
+              <span className="icon-html text-[#E34C26]">
+                <FaHtml5 aria-hidden />
+              </span>
+              <span className="icon-css text-[#1572B6]">
+                <FaCss3Alt aria-hidden />
+              </span>
               <span className="icon-react text-[#61dbfb]">
                 <FaReact aria-hidden />
               </span>
-              <span className="icon-js text-[#f0db4f]">
-                <FaJsSquare aria-hidden />
-              </span>
-              <span className="icon-code text-white">
-                <FaCode aria-hidden />
-              </span>
-              <span className="icon-py text-[#306998]">
-                <FaPython aria-hidden />
+              <span className="icon-mobile text-[#4CAF50]">
+                <FaMobileAlt aria-hidden />
               </span>
             </div>
           </div>
@@ -47,34 +47,30 @@ export default function Home() {
         <ScrollAnimation direction="up" delay={0.1}>
           <section className="max-w-2xl mx-auto pb-20">
             <ScrollAnimation direction="fade" delay={0.15}>
-              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Building <strong>exceptional software</strong> that solves real problems and delivers value.</h2>
+              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Don't regret losing those <strong>next thousand customers</strong> because of a poorly built website.</h2>
             </ScrollAnimation>
 
             <div className="max-w-sm lg:mx-auto">
               <ScrollAnimation direction="up" delay={0.2}>
-                <h3 className="text-lg mb-4">What I can help you build:</h3>
+                <h3 className="text-lg mb-4">There are many reasons why a website can fail:</h3>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.25}>
-                <div className="space-y-4 mb-8">
-                  <Link href="/i-build-websites" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Modern Websites</h4>
-                    <p className="text-sm text-gray-400">Fast, responsive, and user-friendly websites that convert visitors into customers.</p>
-                  </Link>
-                  <Link href="/i-build-ror-apps" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Ruby on Rails Applications</h4>
-                    <p className="text-sm text-gray-400">Scalable, maintainable Rails applications built with best practices.</p>
-                  </Link>
-                  <Link href="/i-am-a-software-developer" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Custom Software Solutions</h4>
-                    <p className="text-sm text-gray-400">Tailored software development to solve your unique business challenges.</p>
-                  </Link>
-                </div>
+                <ul className="list-disc list-inside ml-2 mb-8">
+                  <li>The website is too slow</li>
+                  <li>The website is too complex</li>
+                  <li>The website is too hard to use</li>
+                  <li>The website isn't mobile friendly</li>
+                  <li>The website isn't accessible</li>
+                  <li>The website has a poor design</li>
+                </ul>
               </ScrollAnimation>
             </div>
 
           </section>
         </ScrollAnimation>
+
+        <AllServicesSection />
 
         <ScrollAnimation direction="up" delay={0.3}>
           <section className="max-w-2xl mx-auto pb-20">
@@ -84,7 +80,7 @@ export default function Home() {
             
             <ScrollAnimation direction="up" delay={0.4}>
               <p className="lg:text-center mb-8 text-glow">
-                I'm always excited to work on new projects and solve interesting problems. Whether you need a new website, a Rails application, or custom software development, I'd love to hear about your project.
+                I'm <strong>always</strong> looking for new ways to improve my skills and knowledge. If you have any questions or suggestions, feel free to reach out to me with questions or an inquiry about your site using any of the methods below.
               </p>
             </ScrollAnimation>
             
@@ -119,7 +115,7 @@ export default function Home() {
 
             <ScrollAnimation direction="fade" delay={0.7}>
               <p className="lg:text-center text-glow text-xl mx-auto font-bold">
-                <em>Let's build something exceptional together.</em>
+                <em>Make the choice to build something great.</em>
               </p>
             </ScrollAnimation>
           </section>
@@ -179,7 +175,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-react-icon {
+        @keyframes explode-html-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -191,7 +187,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-js-icon {
+        @keyframes explode-css-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1) rotate(0);
           }
@@ -203,7 +199,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-code-icon {
+        @keyframes explode-react-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -215,7 +211,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-py-icon {
+        @keyframes explode-mobile-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -227,7 +223,7 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-react-icon {
+        @keyframes dance-html-icon {
           0% {
             transform: rotate(0deg);
           }
@@ -236,7 +232,7 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-js-icon {
+        @keyframes dance-css-icon {
           0% {
             transform: rotate(-10deg);
           }
@@ -248,7 +244,7 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-code-icon {
+        @keyframes dance-react-icon {
           0% {
             transform: rotate(0deg);
           }
@@ -290,15 +286,15 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-py-icon {
+        @keyframes dance-mobile-icon {
           0% {
-            color: #306998;
+            color: #4CAF50;
           }
           50% {
-            color: #ffd43b;
+            color: #8BC34A;
           }
           100% {
-            color: #306998;
+            color: #4CAF50;
           }
         }
 
@@ -314,20 +310,20 @@ export default function Home() {
           opacity: 1;
         }
 
+        .icon-html {
+          animation: dance-html-icon 8s 7s linear infinite;
+        }
+
+        .icon-css {
+          animation: dance-css-icon 2s 7s ease infinite;
+        }
+
         .icon-react {
-          animation: dance-react-icon 8s 7s linear infinite;
+          animation: dance-react-icon 3s 7s ease infinite;
         }
 
-        .icon-js {
-          animation: dance-js-icon 2s 7s ease infinite;
-        }
-
-        .icon-code {
-          animation: dance-code-icon 3s 7s ease infinite;
-        }
-
-        .icon-py {
-          animation: dance-py-icon 4s 7s ease infinite;
+        .icon-mobile {
+          animation: dance-mobile-icon 4s 7s ease infinite;
         }
 
         @media screen and (max-width: 500px) {
