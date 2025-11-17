@@ -1,20 +1,17 @@
 'use client'
 
 import Link from 'next/link';
+
+
 import { BLogo } from './components/svg/BLogo';
-import { animated, useSpring } from '@react-spring/web';
 import { ScrollAnimation } from './components/ScrollAnimation';
 import { FaReact, FaJsSquare, FaCode, FaPython, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
 export default function Home() {
-  const [props, _api] = useSpring(() => ({
-    from: { opacity: 0 },
-    to: { opacity: 1 }
-  }));
 
   return (
     <div className="min-h-screen max-w-screen">
-      <animated.main style={props} className="h-full px-6">
+      <main className="h-full px-6">
         <section className="relative pt-[40vh] pb-[17vh]">
           <div className="hero-logo absolute top-[30vh] left-1/2 -translate-x-1/2 -z-1">
             <BLogo fill="#383838" height="500px" width="500px" />
@@ -141,7 +138,7 @@ export default function Home() {
             </a>
           </section>
         </footer>
-      </animated.main>
+      </main>
 
       <style jsx>{`
         @keyframes insert-hero-logo {
