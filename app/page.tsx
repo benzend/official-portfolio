@@ -139,9 +139,11 @@ export default function Home() {
       <style jsx>{`
         @keyframes insert-hero-logo {
           0% {
+            opacity: 0;
             top: -100vh;
           }
           100% {
+            opacity: 1;
             top: 30vh;
           }
         }
@@ -294,34 +296,35 @@ export default function Home() {
         }
 
         .hero-logo {
-          animation: insert-hero-logo 5s linear forwards;
+          opacity: 0;
+          animation: insert-hero-logo 0.2s 2.8s linear forwards;
         }
 
         .main-title {
-          animation: explode-main-title 2s 5s ease-out forwards;
+          animation: explode-main-title 2s 3s ease-out forwards;
         }
 
         .sub-header {
-          animation: explode-hero-subTitle 2s 5s ease-out forwards;
+          animation: explode-hero-subTitle 2s 3s ease-out forwards;
         }
 
         .icon-react {
-          animation: explode-react-icon 2s 5s ease-out forwards,
+          animation: explode-react-icon 2s 3s ease-out forwards,
             dance-react-icon 8s 7s linear infinite;
         }
 
         .icon-js {
-          animation: explode-js-icon 2s 5s ease-out forwards,
+          animation: explode-js-icon 2s 3s ease-out forwards,
             dance-js-icon 2s 7s ease infinite;
         }
 
         .icon-code {
-          animation: explode-code-icon 2s 5s ease-out forwards,
+          animation: explode-code-icon 2s 3s ease-out forwards,
             dance-code-icon 3s 7s ease infinite;
         }
 
         .icon-py {
-          animation: explode-py-icon 2s 5s ease-out forwards,
+          animation: explode-py-icon 2s 3s ease-out forwards,
             dance-py-icon 4s 7s ease infinite;
         }
 
