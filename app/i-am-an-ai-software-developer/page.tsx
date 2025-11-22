@@ -1,13 +1,11 @@
 'use client'
 
-import Link from 'next/link';
+import { BLogo } from '../components/svg/BLogo';
+import { ScrollAnimation } from '../components/ScrollAnimation';
+import { AllServicesSection } from '../components/AllServicesSection';
+import { FaRobot, FaBrain, FaCode, FaMicrochip, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
-
-import { BLogo } from './components/svg/BLogo';
-import { ScrollAnimation } from './components/ScrollAnimation';
-import { FaReact, FaJsSquare, FaCode, FaPython, FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
-
-export default function Home() {
+export default function IAmAnAISoftwareDeveloper() {
 
   return (
     <div className="min-h-screen max-w-screen">
@@ -22,20 +20,20 @@ export default function Home() {
               Benjamin Scott
             </h1>
             <p className="sub-header text-sm lg:text-center text-gray-400 mb-3 max-w-sm mx-auto">
-              Software engineer passionate about building exceptional digital experiences.
+              AI software developer with a passion for building intelligent systems that solve real-world problems.
             </p>
             <div className="flex justify-between text-2xl w-[200px] mx-auto">
-              <span className="icon-react text-[#61dbfb]">
-                <FaReact aria-hidden />
+              <span className="icon-robot text-[#00BCD4]">
+                <FaRobot aria-hidden />
               </span>
-              <span className="icon-js text-[#f0db4f]">
-                <FaJsSquare aria-hidden />
+              <span className="icon-brain text-[#9C27B0]">
+                <FaBrain aria-hidden />
               </span>
-              <span className="icon-code text-white">
+              <span className="icon-code text-[#4CAF50]">
                 <FaCode aria-hidden />
               </span>
-              <span className="icon-py text-[#306998]">
-                <FaPython aria-hidden />
+              <span className="icon-chip text-[#FF9800]">
+                <FaMicrochip aria-hidden />
               </span>
             </div>
           </div>
@@ -44,38 +42,30 @@ export default function Home() {
         <ScrollAnimation direction="up" delay={0.1}>
           <section className="max-w-2xl mx-auto pb-20">
             <ScrollAnimation direction="fade" delay={0.15}>
-              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Building <strong>exceptional software</strong> that solves real problems and delivers value.</h2>
+              <h2 className="text-4xl lg:text-center mb-8 text-glow text-shadow-white">Don't let your <strong>AI project</strong> fail due to poor implementation and lack of expertise.</h2>
             </ScrollAnimation>
 
             <div className="max-w-sm lg:mx-auto">
               <ScrollAnimation direction="up" delay={0.2}>
-                <h3 className="text-lg mb-4">What I can help you build:</h3>
+                <h3 className="text-lg mb-4">Common AI project challenges:</h3>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.25}>
-                <div className="space-y-4 mb-8">
-                  <Link href="/i-build-websites" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Modern Websites</h4>
-                    <p className="text-sm text-gray-400">Fast, responsive, and user-friendly websites that convert visitors into customers.</p>
-                  </Link>
-                  <Link href="/i-build-ror-apps" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Ruby on Rails Applications</h4>
-                    <p className="text-sm text-gray-400">Scalable, maintainable Rails applications built with best practices.</p>
-                  </Link>
-                  <Link href="/i-am-a-software-developer" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">Custom Software Solutions</h4>
-                    <p className="text-sm text-gray-400">Tailored software development to solve your unique business challenges.</p>
-                  </Link>
-                  <Link href="/i-am-an-ai-software-developer" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
-                    <h4 className="font-bold mb-2">AI & Machine Learning</h4>
-                    <p className="text-sm text-gray-400">Intelligent systems and ML models that transform data into actionable insights.</p>
-                  </Link>
-                </div>
+                <ul className="list-disc list-inside ml-2 mb-8">
+                  <li>Poor data quality and preprocessing</li>
+                  <li>Overfitting and model selection issues</li>
+                  <li>Scalability and performance bottlenecks</li>
+                  <li>Lack of model interpretability</li>
+                  <li>Ethical considerations and bias</li>
+                  <li>Integration with existing systems</li>
+                </ul>
               </ScrollAnimation>
             </div>
 
           </section>
         </ScrollAnimation>
+
+        <AllServicesSection />
 
         <ScrollAnimation direction="up" delay={0.3}>
           <section className="max-w-2xl mx-auto pb-20">
@@ -85,14 +75,14 @@ export default function Home() {
             
             <ScrollAnimation direction="up" delay={0.4}>
               <p className="lg:text-center mb-8 text-glow">
-                I'm always excited to work on new projects and solve interesting problems. Whether you need a new website, a Rails application, or custom software development, I'd love to hear about your project.
+                I'm passionate about pushing the boundaries of what's possible with AI. If you have questions about machine learning, need help with an AI project, or want to discuss how intelligent systems can transform your business, I'd love to hear from you.
               </p>
             </ScrollAnimation>
             
             <ScrollAnimation direction="up" delay={0.45}>
               <div className="lg:max-w-sm mx-auto flex flex-wrap lg:justify-center gap-4 mb-8">
                 <ScrollAnimation direction="left" delay={0.5}>
-                  <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello from your portfolio" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                  <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=AI Development inquiry" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
                     <FaEnvelope aria-hidden />
                     <span>Email</span>
                   </a>
@@ -120,7 +110,7 @@ export default function Home() {
 
             <ScrollAnimation direction="fade" delay={0.7}>
               <p className="lg:text-center text-glow text-xl mx-auto font-bold">
-                <em>Let's build something exceptional together.</em>
+                <em>Build AI solutions that deliver real business value.</em>
               </p>
             </ScrollAnimation>
           </section>
@@ -137,7 +127,7 @@ export default function Home() {
             <a href="https://x.com/TheBenzend" className="hover:text-blue-400 transition-colors">
               <FaTwitter aria-hidden />
             </a>
-            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=Hello from your portfolio" className="hover:text-blue-400 transition-colors">
+            <a href="mailto:benjamin.scottt.dev+portfolio@gmail.com?subject=AI Development inquiry" className="hover:text-blue-400 transition-colors">
               <FaEnvelope aria-hidden />
             </a>
           </section>
@@ -180,7 +170,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-react-icon {
+        @keyframes explode-robot-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -192,7 +182,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-js-icon {
+        @keyframes explode-brain-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1) rotate(0);
           }
@@ -216,7 +206,7 @@ export default function Home() {
           }
         }
 
-        @keyframes explode-py-icon {
+        @keyframes explode-chip-icon {
           0% {
             transform: translate(0, 0) rotate(0deg) scale(1);
           }
@@ -228,78 +218,57 @@ export default function Home() {
           }
         }
 
-        @keyframes dance-react-icon {
+        @keyframes dance-robot-icon {
           0% {
             transform: rotate(0deg);
           }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-
-        @keyframes dance-js-icon {
-          0% {
+          25% {
             transform: rotate(-10deg);
           }
-          50% {
+          75% {
             transform: rotate(10deg);
           }
           100% {
-            transform: rotate(-10deg);
+            transform: rotate(0deg);
+          }
+        }
+
+        @keyframes dance-brain-icon {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.8;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
           }
         }
 
         @keyframes dance-code-icon {
           0% {
-            transform: rotate(0deg);
-          }
-          3% {
-            transform: rotate(5deg);
-          }
-          6% {
-            transform: rotate(-5deg);
-          }
-          9% {
-            transform: rotate(8deg);
-          }
-          12% {
-            transform: rotate(-8deg);
-          }
-          15% {
-            transform: rotate(10deg);
-          }
-          18% {
-            transform: rotate(-10deg);
-          }
-          21% {
-            transform: rotate(8deg);
-          }
-          23% {
-            transform: rotate(-8deg);
+            transform: translateY(0);
           }
           25% {
-            transform: rotate(5deg);
+            transform: translateY(-5px);
           }
-          28% {
-            transform: rotate(-5deg);
+          75% {
+            transform: translateY(5px);
           }
-          31% {
-            transform: rotate(3deg);
-          }
-          35% {
-            transform: rotate(0deg);
+          100% {
+            transform: translateY(0);
           }
         }
 
-        @keyframes dance-py-icon {
+        @keyframes dance-chip-icon {
           0% {
-            color: #306998;
-          }
-          50% {
-            color: #ffd43b;
+            transform: rotate(0deg);
           }
           100% {
-            color: #306998;
+            transform: rotate(360deg);
           }
         }
 
@@ -315,20 +284,20 @@ export default function Home() {
           opacity: 1;
         }
 
-        .icon-react {
-          animation: dance-react-icon 8s 7s linear infinite;
+        .icon-robot {
+          animation: dance-robot-icon 4s 7s ease infinite;
         }
 
-        .icon-js {
-          animation: dance-js-icon 2s 7s ease infinite;
+        .icon-brain {
+          animation: dance-brain-icon 2s 7s ease infinite;
         }
 
         .icon-code {
           animation: dance-code-icon 3s 7s ease infinite;
         }
 
-        .icon-py {
-          animation: dance-py-icon 4s 7s ease infinite;
+        .icon-chip {
+          animation: dance-chip-icon 8s 7s linear infinite;
         }
 
         @media screen and (max-width: 500px) {

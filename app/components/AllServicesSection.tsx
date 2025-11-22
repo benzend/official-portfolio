@@ -25,6 +25,10 @@ export function AllServicesSection() {
               <h4 className="font-bold mb-2">Custom Software Solutions</h4>
               <p className="text-sm text-gray-400">Tailored software development to solve your unique business challenges.</p>
             </Link>
+            <Link href="/i-am-an-ai-software-developer" className="block p-4 border border-gray-700 rounded-lg hover:border-blue-400 transition-colors">
+              <h4 className="font-bold mb-2">AI & Machine Learning</h4>
+              <p className="text-sm text-gray-400">Intelligent systems and ML models that transform data into actionable insights.</p>
+            </Link>
           </div>
         </ScrollAnimation>
       </section>
