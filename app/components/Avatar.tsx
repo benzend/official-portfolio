@@ -15,7 +15,7 @@ export const Avatar = ({
   customStyles = { picture: {}, name: {} },
 }: IAvatarProps) => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-2">
       <div style={customStyles.picture}>
         <Image
           src={picture}
