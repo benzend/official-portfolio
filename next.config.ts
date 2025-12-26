@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverExternalPackages: ['@react-spring/web'],
+  turbopack: {},
 };
 
 export default nextConfig;

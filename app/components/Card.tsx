@@ -1,8 +1,9 @@
+'use client';
 import Image, { ImageProps } from 'next/image';
-import { useSpring, animated, UseSpringProps, UseSpringsProps } from '@react-spring/web';
+import { useSpring, animated } from '@react-spring/web';
 
 export interface ICardProps {
-  children: any,
+  children: React.ReactNode,
   className?: string
 }
 
@@ -15,7 +16,7 @@ export const Card = ({ children, className }: ICardProps) => {
 }
 
 export interface ICardTitleProps {
-  children: any
+  children: React.ReactNode
 }
 export const CardTitle = ({ children }: ICardTitleProps) => {
   return (
@@ -25,8 +26,7 @@ export const CardTitle = ({ children }: ICardTitleProps) => {
   )
 }
 
-export interface ICardImageProps extends ImageProps {
-}
+export type ICardImageProps = ImageProps;
 export const CardImage = (props: ICardImageProps) => {
   return (
     <div className='relative h-40 max-w-full'>
@@ -36,7 +36,7 @@ export const CardImage = (props: ICardImageProps) => {
 }
 
 export interface ICardContentProps {
-  children: any;
+  children: React.ReactNode;
 }
 export const CardContent = ({ children }: ICardContentProps) => {
   return (
@@ -47,7 +47,7 @@ export const CardContent = ({ children }: ICardContentProps) => {
 }
 
 export interface ICardAnimateProps {
-  children: any,
+  children: React.ReactNode,
   hoverAnimation?: 'float'
 }
 export const CardAnimate = ({ children, hoverAnimation = 'float' }: ICardAnimateProps) => {
