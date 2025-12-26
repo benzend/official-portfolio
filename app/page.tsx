@@ -127,7 +127,8 @@ export default function Home() {
         </ScrollAnimation>
 
         <footer className="flex fixed justify-end mx-auto w-full bottom-0 inset-x-0 mr-2 mb-1">
-          <section className="flex gap-2">
+          <section className="flex items-center gap-2">
+            <Link href="/blog" className="hover:text-blue-400 transition-colors mr-4">Blog</Link>
             <a href="https://github.com/benzend" className="hover:text-blue-400 transition-colors">
               <FaGithub aria-hidden />
             </a>

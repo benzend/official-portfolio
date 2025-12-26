@@ -16,12 +16,20 @@ export const Avatar = ({
 }: IAvatarProps) => {
   return (
     <div className="flex items-center gap-2">
-      <div style={customStyles.picture}>
+      <div 
+        className="rounded-full overflow-hidden"
+        style={{
+          width: typeof customStyles.picture?.width === 'number' ? customStyles.picture.width : 48,
+          height: typeof customStyles.picture?.height === 'number' ? customStyles.picture.height : 48,
+          marginRight: '1rem',
+          ...customStyles.picture
+        }}
+      >
         <Image
           src={picture}
           width={typeof customStyles.picture?.width === 'number' ? customStyles.picture.width : 48}
           height={typeof customStyles.picture?.height === 'number' ? customStyles.picture.height : 48}
-          className="w-12 h-12 rounded-full mr-4"
+          className="w-full h-full object-cover"
           alt={name}
         />
       </div>
