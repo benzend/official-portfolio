@@ -4,7 +4,7 @@ excerpt: '2025 reinforced a simple truth: building things is only half the job. 
 coverImage: 
   url: '/assets/blog/my-2025-wrapped/cover.png'
   alt: '2025 year in review with lessons learned'
-date: '2025-12-25T10:00:00.000Z'
+date: '2025-12-31T10:00:00.000Z'
 author:
   name: Benjamin Scott
   picture: '/assets/blog/authors/benjamin-scott.jpeg'
@@ -90,7 +90,7 @@ Situations matter. People already motivated to fix a pain point are far easier t
 
 Avoid resentment with teammates. Don't be an asshole - be a teacher.
 
-A-players are the only people worth hiring or working with.
+A-players, people who want to do amazing things, are the only people worth hiring or working with.
 
 Hiring and talent eventually become the main scaling constraint. Bad talent creates bad companies.
 
@@ -110,9 +110,7 @@ People also love to save money - one of the easiest ways to show value.
 
 Services are often the easiest path to revenue. People are comfortable trading time for money.
 
-Code is just a tool to reach an outcome.
-
-Software is just a tool to reach an outcome.
+Code and software are just tools to reach an outcome.
 
 AI now lets you build websites faster than most no-code tools, especially for custom work. It's often the better leverage.
 
@@ -124,28 +122,40 @@ Stress isn't valuable. The less stress you put your body through, the better you
 
 Consume a lot but create just as much. A healthy growth ratio feels close to 50/50.
 
-Bulk consume, then act, then critique. Repeat.
+My learning strategy: Bulk consume, then act, then critique. Repeat.
 
 Measure how you spend your time to see how you're wasting it.
 
-Becoming top 1% isn't as hard as it seems. It just takes time, discipline, and honest self-reflection.
+Becoming top 1% isn't as hard as it seems. It just takes time, discipline, and consistent self-reflection.
 
 Expect meaningful outcomes to take years. Play the long game.
 
 ---
 
-## Books I Read in 2025
+## Top Books I Read in 2025
+
+Here are the books I read in 2025, top being the most influential for me.
 
 - Supercommunicators — Charles Duhigg
 - Start with Why — Simon Sinek
+- The Mom Test — Rob Fitzpatrick
+- Dopamine Nation — Anne Lembke
 - Peak Performance — Brad Stulberg & Steve Magness
 - Start Small, Stay Small — Rob Walling
-- The Mom Test — Rob Fitzpatrick
 - Storyworthy — Matthew Dicks
 - Trust and Inspire — Stephen M.R. Covey
-- Dopamine Nation — Anne Lembke
 - Predictably Irrational — Dan Ariely
 - The Richest Man in Babylon — George S. Clason
 - An Astronaut's Guide to Life on Earth — Chris Hadfield
 - Do Hard Things — Steve Magness
 - Good Strategy / Bad Strategy — Richard Rumelt
+
+## The New Year and New Goals
+
+I'm going to start a 2026 with a few goals:
+
+1. I want to lean into content creation. I'm going to start writing more.
+2. I want to learn more about the intersection of AI and business.
+3. I want to read more books. The goal to 2 per month!
+4. I want to help more people. Writing content is a great way to do that.
+5. I want to get my SaaS startups off the ground, pull in a bit of extra revenue.
