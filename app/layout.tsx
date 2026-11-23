@@ -1,16 +1,28 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Montserrat, Quicksand } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { metadata } from './metadata';
+import { metadata } from "./metadata";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-quicksand",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export { metadata };
@@ -23,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${quicksand.variable} ${montserrat.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
