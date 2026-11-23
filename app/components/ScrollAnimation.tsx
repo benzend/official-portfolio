@@ -1,15 +1,18 @@
 'use client'
 
-import { motion, useInView, useAnimation } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
-interface ScrollAnimationProps {
+type IRevealMargin = `${number}px` | `${number}px ${number}px ${number}px ${number}px`
+
+interface IScrollAnimationProps {
   children: React.ReactNode
   className?: string
   delay?: number
   duration?: number
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade'
   distance?: number
+  margin?: IRevealMargin
 }
 
 export function ScrollAnimation({
@@ -18,44 +21,61 @@ export function ScrollAnimation({
   delay = 0,
   duration = 0.6,
   direction = 'up',
-  distance = 50
-}: ScrollAnimationProps) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "200px" })
+  distance = 50,
+  margin = '0px',
+}: IScrollAnimationProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin })
   const controls = useAnimation()
+  const framerReducedMotion = useReducedMotion()
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setPrefersReducedMotion(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  const reduceMotion = prefersReducedMotion || framerReducedMotion === true
+
+  useEffect(() => {
+    if (reduceMotion) {
+      controls.set('visible')
+      return
+    }
     if (isInView) {
       controls.start('visible')
     }
-  }, [isInView, controls])
+  }, [isInView, controls, reduceMotion])
 
   const getVariants = () => {
     const baseVariants = {
       hidden: { opacity: 0 },
-      visible: { opacity: 1 }
+      visible: { opacity: 1 },
     }
 
     switch (direction) {
       case 'up':
         return {
           hidden: { opacity: 0, y: distance },
-          visible: { opacity: 1, y: 0 }
+          visible: { opacity: 1, y: 0 },
         }
       case 'down':
         return {
           hidden: { opacity: 0, y: -distance },
-          visible: { opacity: 1, y: 0 }
+          visible: { opacity: 1, y: 0 },
         }
       case 'left':
         return {
           hidden: { opacity: 0, x: distance },
-          visible: { opacity: 1, x: 0 }
+          visible: { opacity: 1, x: 0 },
         }
       case 'right':
         return {
           hidden: { opacity: 0, x: -distance },
-          visible: { opacity: 1, x: 0 }
+          visible: { opacity: 1, x: 0 },
         }
       case 'fade':
       default:
@@ -67,14 +87,18 @@ export function ScrollAnimation({
     <motion.div
       ref={ref}
       className={className}
-      initial="hidden"
+      initial={reduceMotion ? false : 'hidden'}
       animate={controls}
       variants={getVariants()}
-      transition={{
-        duration,
-        delay,
-        ease: "easeOut"
-      }}
+      transition={
+        reduceMotion
+          ? { duration: 0 }
+          : {
+              duration,
+              delay,
+              ease: 'easeOut',
+            }
+      }
     >
       {children}
     </motion.div>
