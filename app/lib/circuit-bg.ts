@@ -63,12 +63,14 @@ export function initCircuitBackground(
   let pulses: IPulse[] = []
   let frame = 0
   let last = 0
+  let builtWidth = -1
   let resizeTimer: ReturnType<typeof setTimeout> | undefined
 
   const build = () => {
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
     width = window.innerWidth
     height = window.innerHeight
+    builtWidth = width
     canvas.width = width * dpr
     canvas.height = height * dpr
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
@@ -185,6 +187,7 @@ export function initCircuitBackground(
   const onResize = () => {
     clearTimeout(resizeTimer)
     resizeTimer = setTimeout(() => {
+      if (window.innerWidth === builtWidth) return
       build()
       start()
     }, 150)

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion'
+import { motion, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 
 type IRevealMargin = `${number}px` | `${number}px ${number}px ${number}px ${number}px`
@@ -22,23 +22,20 @@ export function ScrollAnimation({
   duration = 0.6,
   direction = 'up',
   distance = 50,
-  margin = '0px',
+  margin = '200px',
 }: IScrollAnimationProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin })
   const controls = useAnimation()
-  const framerReducedMotion = useReducedMotion()
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => setPrefersReducedMotion(media.matches)
+    const update = () => setReduceMotion(media.matches)
     update()
     media.addEventListener('change', update)
     return () => media.removeEventListener('change', update)
   }, [])
-
-  const reduceMotion = prefersReducedMotion || framerReducedMotion === true
 
   useEffect(() => {
     if (reduceMotion) {
