@@ -78,16 +78,16 @@ export default function Home() {
           </a>
         </section>
 
-        <ScrollAnimation direction="up" delay={0.1}>
+        <ScrollAnimation direction="up" delay={0.1} margin="0px">
           <section className="bs-sec" id="build" aria-labelledby="bh">
-            <ScrollAnimation direction="fade" delay={0.15}>
+            <ScrollAnimation direction="fade" delay={0.15} margin="0px">
               <div className="bs-sec-head">
                 <span className="bs-sec-idx" aria-hidden="true">01 //</span>
                 <h2 id="bh">What I can help you build</h2>
               </div>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="up" delay={0.25}>
+            <ScrollAnimation direction="up" delay={0.25} margin="0px">
               <div className="bs-cards">
                 {services.map((service) => (
                   <Link key={service.href} className="bs-card" href={service.href}>
@@ -104,22 +104,22 @@ export default function Home() {
           </section>
         </ScrollAnimation>
 
-        <ScrollAnimation direction="up" delay={0.3}>
+        <ScrollAnimation direction="up" delay={0.3} margin="0px">
           <section className="bs-sec" aria-labelledby="ch">
-            <ScrollAnimation direction="fade" delay={0.35}>
+            <ScrollAnimation direction="fade" delay={0.35} margin="0px">
               <div className="bs-sec-head">
                 <span className="bs-sec-idx" aria-hidden="true">02 //</span>
                 <h2 id="ch">Ways to Get in Touch</h2>
               </div>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="up" delay={0.4}>
+            <ScrollAnimation direction="up" delay={0.4} margin="0px">
               <p className="bs-lead">
                 I&apos;m always excited to work on new projects and solve interesting problems. Whether you need a new website, a Rails application, or custom software development, I&apos;d love to hear about your project.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="up" delay={0.45}>
+            <ScrollAnimation direction="up" delay={0.45} margin="0px">
               <ContactPills />
             </ScrollAnimation>
 

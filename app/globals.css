@@ -31,8 +31,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-montserrat);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat, "Montserrat");
+  --font-mono: var(--font-geist-mono, "Geist Mono");
 }
 
 html {
@@ -40,9 +40,9 @@ html {
 }
 
 body {
-  --bs-font-display: var(--font-quicksand), "Quicksand", ui-sans-serif, system-ui, sans-serif;
-  --bs-font-body: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --bs-font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --bs-font-display: var(--font-quicksand, "Quicksand"), "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --bs-font-body: var(--font-montserrat, "Montserrat"), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --bs-font-mono: var(--font-geist-mono, "Geist Mono"), ui-monospace, SFMono-Regular, Menlo, monospace;
   background: var(--bs-bg);
   color: var(--bs-fg);
   font-family: var(--bs-font-body);
@@ -639,3 +639,7 @@ h2 {
     transform: none !important;
   }
 }
+
+/* ---------- text backing (added after PR #2 QA): pulses passing behind un-carded text dropped the lead to ~2:1 ---------- */
+.bs-lead,.bs-closer,.bs-tagline,.bs-pitch,.bs-sec-head h2{position:relative;isolation:isolate}
+.bs-lead::before,.bs-closer::before,.bs-tagline::before,.bs-pitch::before,.bs-sec-head h2::before{content:"";position:absolute;inset:-4px -8px;z-index:-1;pointer-events:none;border-radius:20px;background:rgba(5,9,10,.86);box-shadow:0 0 24px 14px rgba(5,9,10,.86)}

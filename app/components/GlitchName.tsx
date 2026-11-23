@@ -45,7 +45,6 @@ export default function GlitchName({ text, className = '' }: IGlitchNameProps) {
       id="name"
       className={className ? `bs-name ${className}` : 'bs-name'}
       aria-label={text}
-      tabIndex={0}
       onPointerEnter={play}
       onFocus={play}
     >
